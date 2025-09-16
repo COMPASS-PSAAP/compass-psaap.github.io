@@ -1,1 +1,1 @@
-Sitemap: https://compass-psaap.github.io/COMPASS-GitHub-Pages-Website/sitemap.xml
+Sitemap: https://compass-psaap.github.io/sitemap.xml
