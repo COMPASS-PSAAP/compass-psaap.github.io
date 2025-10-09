@@ -1,7 +1,7 @@
 # site properties and page defaults
 title: COMPASS-PSAAP
 subtitle: 
-description: An engaging 1-3 sentence description of your lab.
+description: The Center for Modern Parallel Adaptive Systems Software (COMPASS), is a DOE-funded PSAAP research center focused on developing new systems software for cutting edge HPC systems.
 header: images/background.jpg
 footer: images/background.jpg
 proofer: false
