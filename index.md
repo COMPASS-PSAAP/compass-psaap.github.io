@@ -1,9 +1,9 @@
 ---
 ---
 
-# COMPASS-PSAAP's Website
+# The Center for Modern Parallel Adaptive System Software - a PSAAP IV Research CEnter
 
-An engaging 1-3 sentence description of your lab.
+COMPASS is a research center at the University of New Mexico that focuses on designing the next generation of system software for high-performanc comouting systems---system software that can adapt to and optimize for changing problem, application, and system demands.
 
 {% include section.html %}
 
