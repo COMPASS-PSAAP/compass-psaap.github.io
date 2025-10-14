@@ -5,7 +5,7 @@ title: Home
 # The Center for Modern Parallel Adaptive System Software - a PSAAP IV Research Crnter
 
 COMPASS is a research center at the University of New Mexico that focuses on designing 
-the next generation of system software for high-performanc comouting systems---system 
+the next generation of system software for high-performance computing systems---system 
 software that can adapt to and optimize for changing problem, application, and system demands.
 
 {% include section.html %}
