@@ -1,4 +1,5 @@
 ---
+title: Home
 ---
 
 # The Center for Modern Parallel Adaptive System Software - a PSAAP IV Research CEnter
