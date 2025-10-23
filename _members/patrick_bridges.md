@@ -5,6 +5,7 @@ role: principal-investigator
 affiliation: University of New Mexico
 aliases:
 links:
+  email: patrickb@unm.edu
   home-page: https://www.cs.unm.edu/directory/faculty-profiles/patrick-bridges.html
   orcid: 0000-0003-4801-0390
 ---
