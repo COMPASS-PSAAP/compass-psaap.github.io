@@ -1,0 +1,13 @@
+---
+name: Purushotham "Puri" Bangalore
+image: images/Purushotham-photo.jpg
+description: Co-PI
+affiliation: University of Alabama
+role: programmer
+links:
+  email: pvbangalore@ua.edu
+  home-page: https://eng.ua.edu/eng-directory/dr-purushotham-bangalore/
+  orcid: 0000-0002-1098-9997
+  
+---
+Dr. Purushotham V. Bangalore is a James R. Cudworth Professor in the Department of Computer Science at the University of Alabama. Dr. Bangalore also serves as the Associate Director of the Center for Understandable, Performant Exascale Communication Systems (CUP-ECS), a Focused Investigatory Center (FIC) supported through the Predictive Science Academic Alliance Program (PSAAP). Dr. Bangalore’s current research work focuses on designing higher-level abstractions to support parallel programs for heterogeneous architectures and next-generation High Performance Computing (HPC) platforms emphasizing predictive performance and portability. He also undertakes research in improving the fault-tolerance of message-passing middleware and security and reliability of storage systems for Exascale systems.
