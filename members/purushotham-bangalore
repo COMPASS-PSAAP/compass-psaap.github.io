@@ -47,17 +47,17 @@
 <link rel="icon" href="/images/icon.png">
 
 <meta name="title" content="Purushotham &quot;Puri&quot; Bangalore">
-<meta name="description" content="Co-PI">
+<meta name="description" content="The Center for Modern Parallel Adaptive Systems Software (COMPASS), is a DOE-funded PSAAP research center focused on developing new systems software for cutting edge HPC systems.">
 
 <meta property="og:title" content="Purushotham &quot;Puri&quot; Bangalore">
 <meta property="og:site_title" content="COMPASS-PSAAP">
-<meta property="og:description" content="Co-PI">
+<meta property="og:description" content="The Center for Modern Parallel Adaptive Systems Software (COMPASS), is a DOE-funded PSAAP research center focused on developing new systems software for cutting edge HPC systems.">
 <meta property="og:url" content="https://compass-psaap.github.io">
 <meta property="og:image" content="/images/share.jpg">
 <meta property="og:locale" content="en_US">
 
 <meta property="twitter:title" content="Purushotham &quot;Puri&quot; Bangalore">
-<meta property="twitter:description" content="Co-PI">
+<meta property="twitter:description" content="The Center for Modern Parallel Adaptive Systems Software (COMPASS), is a DOE-funded PSAAP research center focused on developing new systems software for cutting edge HPC systems.">
 <meta property="twitter:url" content="https://compass-psaap.github.io">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:image" content="/images/share.jpg">
@@ -73,7 +73,7 @@
       "@type": "WebSite",
     
     "name": "Purushotham &quot;Puri&quot; Bangalore",
-    "description": "Co-PI",
+    "description": "The Center for Modern Parallel Adaptive Systems Software (COMPASS), is a DOE-funded PSAAP research center focused on developing new systems software for cutting edge HPC systems.",
     "headline": "Purushotham &quot;Puri&quot; Bangalore",
     "publisher": {
       "@type": "Organization",
@@ -577,8 +577,6 @@
 <div class="portrait-wrapper">
   <a class="portrait" data-style="" aria-label="Purushotham Puri Bangalore">
     
-      <i class="icon fa-solid fa-code"></i>
-    
 
     <img src="/images/Purushotham-photo.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
 
@@ -588,10 +586,6 @@
       </span>
     
 
-    
-      <span class="portrait-description">
-        Co-PI
-      </span>
     
 
     
