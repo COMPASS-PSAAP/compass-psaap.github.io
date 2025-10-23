@@ -1,6 +1,6 @@
 ---
 name: Patrick Bridges
-image: images/photo.jpg
+image: images/Patrick-photo.jpg
 role: principal-investigator
 affiliation: University of New Mexico
 aliases:
