@@ -2,7 +2,7 @@
 name: Anthony Skjellum
 image: images/Anthony-photo.jpg
 description: Co-PI
-affiliation: University of New Mexico
+affiliation: Tennessee Tech University
 role: programmer
 links:
   email: askjellum@tntech.edu
