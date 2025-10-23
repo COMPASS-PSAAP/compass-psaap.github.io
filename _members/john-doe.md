@@ -2,6 +2,7 @@
 name: Trilce Estrada
 image: images/Trilce-photo.jpeg
 role: programmer
+affiliation: University of New Mexico
 links:
   home-page: https://www.cs.unm.edu/~estrada/
   orcid: 0000-0001-7743-8754
