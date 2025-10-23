@@ -7,7 +7,7 @@ role: programmer
 links:
   email: bienz@unm.edu
   home-page: https://amandabienz.com/
-  orcid: 0000-0003-4801-0390
+  orcid: 0000-0002-8891-934X
   
 ---
 
