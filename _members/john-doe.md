@@ -1,6 +1,6 @@
 ---
 name: Trilce Estrada
-image: images/Trilce-photo.jpg
+image: images/Trilce-photo.jpeg
 role: programmer
 links:
   home-page: https://www.cs.unm.edu/~estrada/
