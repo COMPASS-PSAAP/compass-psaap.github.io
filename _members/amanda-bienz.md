@@ -3,7 +3,7 @@ name: Amanda Bienz
 image: images/Amanda-photo.jpg
 description: Co-PI
 affiliation: University of New Mexico
-role: programmer
+role: principal-investigator
 links:
   email: bienz@unm.edu
   home-page: https://amandabienz.com/
