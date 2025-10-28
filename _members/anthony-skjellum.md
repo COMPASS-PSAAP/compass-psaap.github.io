@@ -3,7 +3,7 @@ name: Anthony Skjellum
 image: images/Anthony-photo.jpg
 description: Co-PI
 affiliation: Tennessee Tech University
-role: programmer
+role: principal-investigator
 links:
   email: askjellum@tntech.edu
   home-page: https://www.tntech.edu/directory/engineering/faculty/anthony-skjellum.php
