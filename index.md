@@ -14,7 +14,7 @@ software that can adapt to and optimize for changing problem, application, and s
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+New Publications Coming Soon!
 
 {%
   include button.html
@@ -29,7 +29,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/Research-photo.jpg"
   link="research"
   title="Our Research"
   text=text
@@ -37,7 +37,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Learn more about the goals and objectives of the COMPASS Center and how we're using our PSAAP IV Center to create more efficient and adaptable computing systems
 
 {%
   include button.html
@@ -52,7 +52,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/Projects-photo.jpg"
   link="projects"
   title="Our Projects"
   flip=true
@@ -62,7 +62,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We have a world class research team from University of New Mexico, Tennessee Technical University, University of Alabama, and University of California- Davis. Come meet them and see the unique talents we have to offer!
 
 {%
   include button.html
@@ -77,7 +77,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/Team-photo.jpg"
   link="team"
   title="Our Team"
   text=text
