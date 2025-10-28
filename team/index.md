@@ -16,7 +16,7 @@ Principal Investigators
 
 {% include section.html %}
 
-{% include list.html data="members" component="portrait" filter="role == 'programmer'" %}
+{% include list.html data="members" component="portrait" filter="role != 'programmer'" %}
 
 {% include section.html background="images/background.jpg" dark=true %}
 
@@ -27,7 +27,7 @@ Principal Investigators
 
 {% include section.html %}
 
-{% include list.html data="members" component="portrait" filter="role != 'programmer'" %}
+{% include list.html data="members" component="portrait" filter="role == 'programmer'" %}
 
 {% include section.html background="images/background.jpg" dark=true %}
 
