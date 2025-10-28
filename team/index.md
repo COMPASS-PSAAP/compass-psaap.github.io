@@ -10,13 +10,13 @@ nav:
 We have a growing team consisting of six Principal Investigators, two Full Time Research Scientists, and five PhD Students. Take a look at their profiles to learn more about their objectives, work, publications, and research interests!
 {% include section.html background="images/background.jpg" dark=true %}
 
-<h2> <strong> Principal Investigators </h2> </strong>
+<strong> <h2> Principal Investigators </h2> </strong>
 
 {% include section.html %}
 
 {% include section.html %}
 
-{% include list.html data="members" component="portrait" filter="role != 'programmer'" %}
+{% include list.html data="members" component="portrait" filter="role == 'programmer'" %}
 
 {% include section.html background="images/background.jpg" dark=true %}
 
@@ -27,7 +27,7 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% include section.html %}
 
-{% include list.html data="members" component="portrait" filter="role == 'programmer'" %}
+{% include list.html data="members" component="portrait" filter="role != 'programmer'" %}
 
 {% include section.html background="images/background.jpg" dark=true %}
 
