@@ -3,7 +3,7 @@ name: Trilce Estrada
 image: images/Trilce-photo.jpeg
 description: Co-PI
 affiliation: University of New Mexico
-role: programmer
+role: principal-investigator
 links:
   home-page: https://www.cs.unm.edu/~estrada/
   orcid: 0000-0001-7743-8754
