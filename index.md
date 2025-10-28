@@ -52,7 +52,7 @@ Learn more about the goals and objectives of the COMPASS Center and how we're us
 
 {%
   include feature.html
-  image="images/Projects-photo.jpg"
+  image="images/logo.png"
   link="projects"
   title="Our Projects"
   flip=true
