@@ -34,7 +34,7 @@ For more information on the PSAAP IV COMPASS Center feel free to get in touch us
 
 {%
   include figure.html
-  image="images/Center-photo.jpg"
+  image="images/Center-photo.png"
   caption="UNM's Center for Advanced Research Computing"
 %}
 
@@ -44,7 +44,7 @@ For more information on the PSAAP IV COMPASS Center feel free to get in touch us
 
 {%
   include figure.html
-  image="images/NNSA-photo.jpg"
+  image="images/NNSA-photo.png"
   caption="Our Lab Partners"
 %}
 
