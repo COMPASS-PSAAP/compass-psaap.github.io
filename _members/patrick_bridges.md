@@ -2,7 +2,7 @@
 name: Patrick Bridges
 image: images/Patrick-photo.jpg
 description: Principal Investigator
-role: programmer
+role: principal-investigator
 affiliation: University of New Mexico
 aliases:
 links:
