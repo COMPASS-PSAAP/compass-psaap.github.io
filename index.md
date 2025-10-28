@@ -14,7 +14,7 @@ software that can adapt to and optimize for changing problem, application, and s
 
 {% capture text %}
 
-New Publications Coming Soon!
+Learn more about our research by reading our publications- New Publications Coming Soon!
 
 {%
   include button.html
@@ -29,7 +29,7 @@ New Publications Coming Soon!
 
 {%
   include feature.html
-  image="images/Research-photo.jpg"
+  image="images/Research-photo.jpeg"
   link="research"
   title="Our Research"
   text=text
@@ -37,7 +37,7 @@ New Publications Coming Soon!
 
 {% capture text %}
 
-Learn more about the goals and objectives of the COMPASS Center and how we're using our PSAAP IV Center to create more efficient and adaptable computing systems
+Learn more about how we're using our PSAAP IV Center to create more efficient and adaptable computing systems!
 
 {%
   include button.html
