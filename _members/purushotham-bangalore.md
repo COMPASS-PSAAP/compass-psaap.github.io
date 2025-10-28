@@ -3,7 +3,7 @@ name: Purushotham "Puri" Bangalore
 image: images/Purushotham-photo.jpg
 description: Co-PI
 affiliation: University of Alabama
-role: programmer
+role: principal-investigator
 links:
   email: pvbangalore@ua.edu
   home-page: https://eng.ua.edu/eng-directory/dr-purushotham-bangalore/
