@@ -52,7 +52,7 @@ Learn more about how we're using our PSAAP IV Center to create more efficient an
 
 {%
   include feature.html
-  image="images/Additional Logo.jpg"
+  image="images/Additional-Logo.jpg"
   link="projects"
   title="Our Projects"
   flip=true
