@@ -45,7 +45,7 @@ For more information on the PSAAP IV COMPASS Center feel free to get in touch us
 {%
   include figure.html
   image="images/NNSA-photo.jpg"
-  caption="Sponsor Agency"
+  caption="Our Lab Partners"
 %}
 
 {% endcapture %}
