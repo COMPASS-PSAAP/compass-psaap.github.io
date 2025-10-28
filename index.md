@@ -77,7 +77,7 @@ We have a world class research team from University of New Mexico, Tennessee Tec
 
 {%
   include feature.html
-  image="images/Team-photo.jpg"
+  image="images/team-photo.jpg"
   link="team"
   title="Our Team"
   text=text
