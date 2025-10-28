@@ -2,7 +2,7 @@
 name: Derek Schafer
 image: images/Derek-photo.jpg
 description: Staff Research Scientist 
-role: 
+role: pi
 affiliation: University of New Mexico
 aliases:
 links:
