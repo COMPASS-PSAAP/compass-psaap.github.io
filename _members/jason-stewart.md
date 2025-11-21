@@ -1,6 +1,6 @@
 ---
 name: Jason Stewart
-image: jason-stewart-photo.jpg
+image: images/jason-stewart-photo.jpg
 description: Staff Research Scientist 
 role: programmer
 affiliation: University of New Mexico
