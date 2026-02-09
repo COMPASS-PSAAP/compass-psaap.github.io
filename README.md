@@ -5,6 +5,6 @@
 
   # COMPASS-PSAAP's Website
 
-  Visit **[compass-psaap.github.io](https://compass-psaap.github.io)** 🚀
+  Visit **[compass.unm.edu](http://compass.unm.edu)** 🚀
 
   _Built with [Lab Website Template](https://greene-lab.gitbook.io/lab-website-template-docs)_
