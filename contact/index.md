@@ -5,7 +5,7 @@ nav:
   tooltip: Email, address, and location
 ---
 
-# {% include icon.html icon="fa-regular fa-envelope" %}Contact
+<!-- {% include icon.html icon="fa-regular fa-envelope" %}Contact -->
 
 For more information on the PSAAP IV COMPASS Center feel free to get in touch using any of the following menthods: 
 
@@ -41,12 +41,6 @@ For more information on the PSAAP IV COMPASS Center feel free to get in touch us
 {% endcapture %}
 
 {% capture col2 %}
-
-#{%
-  #include figure.html
-  #image="images/NNSA-photo.jpg"
-  #caption="Our Lab Partners"
-#%}
 
 {% endcapture %}
 
