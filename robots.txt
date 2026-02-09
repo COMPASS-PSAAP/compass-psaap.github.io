@@ -1,1 +1,1 @@
-Sitemap: https://compass-psaap.github.io/sitemap.xml
+Sitemap: http://compass.unm.edu/sitemap.xml
