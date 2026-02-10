@@ -37,9 +37,10 @@
 - id: url:https://sc25.supercomputing.org/proceedings/posters/poster_pages/post197.html
   title: Optimizing the GPU All-Reduce Using Multiple Processes per GPU
   authors: []
-  publisher: ''
+  publisher: Supercomputing 2025
   date: ''
   link: https://sc25.supercomputing.org/proceedings/posters/poster_pages/post197.html
+  author: Michael Adams and Amanda Bienz
   type: papar
   description: SC'25 research poster by Michael Adams
   plugin: sources.py
