@@ -1,6 +1,6 @@
 ---
 name: Riley Shipley
-image: riley-shipley.jpeg
+image: riley-shipley.jpg
 description: Staff Research Scientist 
 role: programmer
 affiliation: Tennessee Tech University
