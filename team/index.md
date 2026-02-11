@@ -31,6 +31,15 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% include section.html background="images/background.jpg" dark=true %}
 
+<h2> <strong> Student Researchers </strong> </h2>
+{% include section.html %}
+
+{% include section.html %}
+
+{% include list.html data="members" component="portrait" filter="role == 'programmer'" %}
+
+{% include section.html background="images/background.jpg" dark=true %}
+
 <h2> <strong> Administrative Staff </strong> </h2>
 {% include section.html %}
 
