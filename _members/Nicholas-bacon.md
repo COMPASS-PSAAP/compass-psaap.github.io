@@ -1,11 +1,11 @@
 ---
 name: Nicholas Bacon
-image: 
+image: nicholas-bacon-photo.png
 description: Student Research Scientist 
 role: student
 affiliation: University of New Mexico
 links:
-  email: 
+  email: nbacon@unm.edu
   orcid: 
 ---
 
