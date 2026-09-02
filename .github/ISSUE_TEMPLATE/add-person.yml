@@ -1,0 +1,51 @@
+name: Add person
+description: Request a new member profile
+title: "Add person: "
+labels: ["content", "person"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      description: "Their role in COMPASS"
+      options:
+        - MS Student
+        - PhD Student
+        - Staff Research Scientist
+        - Co-PI
+        - Administrative Coordinator
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Image
+  - type: input
+    id: email_or_links
+    attributes:
+      label: Email or links
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked that this person does not already exist on the site.
+          required: true
+        - label: I verified the name, role, affiliation, and image are correct.
+          required: true

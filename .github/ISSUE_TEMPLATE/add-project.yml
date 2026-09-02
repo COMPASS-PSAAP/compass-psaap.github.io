@@ -1,0 +1,48 @@
+name: Add project
+description: Request a new project entry
+title: "Add project: "
+labels: ["content", "project"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+  - type: input
+    id: subtitle
+    attributes:
+      label: Subtitle
+  - type: input
+    id: link
+    attributes:
+      label: Link
+  - type: input
+    id: repo
+    attributes:
+      label: Repo
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+  - type: input
+    id: image
+    attributes:
+      label: Image
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked that this project does not already exist on the site.
+          required: true
+        - label: I verified the title, link, repo, tags, and description are correct.
+          required: true
+        - label: I confirmed the content is appropriate for a public website.
+          required: true

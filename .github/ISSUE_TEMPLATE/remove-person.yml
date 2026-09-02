@@ -1,0 +1,30 @@
+name: Remove person
+description: Request removal of a member profile
+title: "Remove person: "
+labels: ["content", "person"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name of Member to be Removed
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for removal
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked that this person is the correct one to remove.
+          required: true
+        - label: I reviewed whether any links or references should also be updated.
+          required: true

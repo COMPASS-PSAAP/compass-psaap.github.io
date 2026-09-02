@@ -1,0 +1,30 @@
+name: Remove project
+description: Request removal of a project entry
+title: "Remove project: "
+labels: ["content", "project"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Project title
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for removal
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked that this project is the correct one to remove.
+          required: true
+        - label: I reviewed whether any related links or references should also be updated.
+          required: true

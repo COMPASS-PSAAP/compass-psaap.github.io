@@ -1,0 +1,69 @@
+name: process-add-issue
+run-name: Process Add Issue #${{ github.event.issue.number }}
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  process-issue:
+    # Only run when a maintainer adds the 'create-pr' label to an open issue
+    # and only if automated-pr has not already been generated
+    if: |
+      github.event.issue.state == 'open' &&
+      github.event.label.name == 'create-pr' &&
+      !contains(github.event.issue.labels.*.name, 'automated-pr')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Process Issue Form
+        id: process
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python .github/scripts/process_add_issue.py
+
+      - name: Create Pull Request
+        if: steps.process.outputs.created == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ${{ steps.process.outputs.branch_name }}
+          title: ${{ steps.process.outputs.pr_title }}
+          commit-message: "${{ steps.process.outputs.pr_title }} (closes #${{ github.event.issue.number }})"
+          body: |
+            Closes #${{ github.event.issue.number }}
+
+            This pull request was automatically generated from issue #${{ github.event.issue.number }}.
+            Please review the changes and merge when ready.
+          delete-branch: true
+
+      - name: Update issue labels
+        if: steps.process.outputs.created == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue edit "$ISSUE_NUMBER" --remove-label "create-pr" --add-label "automated-pr"
