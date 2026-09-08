@@ -2,10 +2,11 @@
 import os
 import re
 import sys
-import yaml
 import urllib.request
 import urllib.parse
+from io import StringIO
 from pathlib import Path
+from ruamel.yaml import YAML
 
 
 def parse_issue_form(body: str) -> dict:
@@ -49,39 +50,21 @@ def parse_links(raw_links: str, email: str, home_page: str, orcid: str) -> dict:
     if orcid:
         links["orcid"] = orcid
         
-    tokens = [t.strip() for t in re.split(r"[\n,]+", raw_links) if t.strip()]
-    for token in tokens:
-        if "github.com/" in token:
-            gh_match = re.search(r"github\.com/([A-Za-z0-9_.-]+)", token)
-            if gh_match:
-                links["github"] = gh_match.group(1)
-        elif "linkedin.com/in/" in token:
-            li_match = re.search(r"linkedin\.com/in/([A-Za-z0-9_.-]+)", token)
-    for token in email_links.split():
-        if "github.com/" in token:
-            gh_match = re.search(r"github\.com/([A-Za-z0-9_-]+)", token)
-            if gh_match:
-                links["github"] = gh_match.group(1)
-        elif "linkedin.com/in/" in token:
-            li_match = re.search(r"linkedin\.com/in/([A-Za-z0-9_.-]+)", token)
-            if li_match:
-                links["linkedin"] = li_match.group(1)
-        elif "twitter.com/" in token or "x.com/" in token:
-            tw_match = re.search(r"(?:twitter|x)\.com/([A-Za-z0-9_]+)", token)
-            if tw_match:
-                links["twitter"] = tw_match.group(1)
-        elif "scholar.google.com" in token:
-            links["google-scholar"] = token
+    for line in raw_links.splitlines():
+        line = line.strip()
+        if not line: continue
+        if ":" in line:
+            key, val = line.split(":", 1)
+            links[key.strip().lower()] = val.strip()
             
     return links
 
 
 def download_image(raw_image: str, slug: str, repo_root: Path, folder: str) -> str:
-    """Download image if it's a URL, return the relative path. Returns empty string if no image provided."""
     if not raw_image:
         return ""
     
-    url_match = re.search(r"(https?://[^\s\)\"']+)", raw_image)
+    url_match = re.search(r"(https?://[^\s\)\"\']+)", raw_image)
     if not url_match:
         if not raw_image.startswith(f"{folder}/") and not raw_image.startswith("http"):
             return f"{folder}/{raw_image}"
@@ -131,18 +114,15 @@ def save_projects(repo_root: Path, projects: list):
     yaml.width = 4096
     yaml.default_flow_style = False
     
-    # Dump to string
     buf = StringIO()
     yaml.dump(projects, buf)
     formatted_yaml = buf.getvalue()
     
-    # Restore spacing between list items for better readability
     formatted_yaml = re.sub(r"\n- title:", r"\n\n- title:", formatted_yaml).strip() + "\n"
     projects_file.write_text(formatted_yaml, encoding="utf-8")
 
 
 def parse_markdown_frontmatter(file_path: Path):
-    """Safely loads YAML frontmatter and content from a markdown file."""
     content = file_path.read_text(encoding="utf-8")
     if not content.startswith("---"):
         raise ValueError(f"File {file_path} does not start with frontmatter")
