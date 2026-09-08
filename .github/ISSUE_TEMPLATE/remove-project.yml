@@ -13,7 +13,7 @@ body:
   - type: input
     id: reason
     attributes:
-      label: Reason for removal
+      label: Reason for archival
     validations:
       required: true
   - type: textarea
@@ -26,5 +26,4 @@ body:
       label: Checklist
       options:
         - label: I checked that this project is the correct one to remove and the project name matches exactly.
-          required: true
           required: true
