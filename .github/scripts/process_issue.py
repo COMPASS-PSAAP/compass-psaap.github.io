@@ -74,7 +74,7 @@ def download_image(raw_image: str, slug: str, repo_root: Path) -> str:
     if not raw_image:
         return ""
     
-    url_match = re.search(r"(https?://[^\s\)]+)", raw_image)
+    url_match = re.search(r"(https?://[^\s\)\"']+)", raw_image)
     if not url_match:
         if not raw_image.startswith("images/") and not raw_image.startswith("http"):
             return f"images/{raw_image}"
