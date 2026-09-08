@@ -1,0 +1,29 @@
+name: Remove project
+description: Request removal of a project entry (moves to previous projects)
+title: "Remove project: "
+labels: ["content", "project"]
+body:
+  - type: input
+    id: project_name
+    attributes:
+      label: Project Name
+      description: The exact title of the project (please copy and paste this exactly as it appears on the project card on the website).
+    validations:
+      required: true
+  - type: input
+    id: reason
+    attributes:
+      label: Reason for removal
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked that this project is the correct one to remove and the name matches exactly.
+          required: true

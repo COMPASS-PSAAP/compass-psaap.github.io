@@ -1,0 +1,36 @@
+name: Add project
+description: Request a new project entry
+title: "Add project: "
+labels: ["content", "project"]
+body:
+  - type: input
+    id: project_name
+    attributes:
+      label: Project Name
+    validations:
+      required: true
+  - type: input
+    id: project_link
+    attributes:
+      label: Project Link
+    validations:
+      required: true
+  - type: textarea
+    id: project_summary
+    attributes:
+      label: Project Summary
+      description: A description of the project.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Internal notes for the review team (will not be published to the website).
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I affirm that I double-checked the information and that this project does not already exist on the site.
+          required: true

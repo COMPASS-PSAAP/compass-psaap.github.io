@@ -1,0 +1,75 @@
+name: Add person
+description: Request a new member profile
+title: "Add person: "
+labels: ["content", "person"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The person's full name.
+    validations:
+      required: true
+  - type: textarea
+    id: image
+    attributes:
+      label: Image
+      description: Drag and drop an image file here, or paste an image URL.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      description: The category this person belongs to on the team page.
+      options:
+        - principal-investigator
+        - programmer
+        - student
+        - admin
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: Description
+      description: A more detailed role or title (e.g., Staff Research Scientist, PhD Student, Co-PI).
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      description: The person's institution or affiliation.
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Email
+    validations:
+      required: true
+  - type: input
+    id: home_page
+    attributes:
+      label: Home page
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID
+      description: e.g., 0000-0000-0000-0000
+  - type: textarea
+    id: personal_summary
+    attributes:
+      label: Personal Summary
+      description: A biography or summary of the person's research and background.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Internal notes for the review team (will not be published to the website).
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I affirm that I double-checked the information and that this person does not already exist on the site.
+          required: true

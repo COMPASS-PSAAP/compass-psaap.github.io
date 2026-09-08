@@ -29,6 +29,11 @@ mascot:
 admin:
   #icon: fa-solid fa-dog
   description: Admin
+
+past-member:
+  #icon: fa-solid fa-clock-rotate-left
+  description: Past Member
+
 # general
 
 link:

@@ -1,0 +1,329 @@
+#!/usr/bin/env python3
+import os
+import re
+import sys
+import yaml
+import urllib.request
+import urllib.parse
+from pathlib import Path
+
+
+def parse_issue_form(body: str) -> dict:
+    fields = {}
+    current_key = None
+    current_lines = []
+    for line in body.splitlines():
+        header_match = re.match(r"^###\s+(.+)$", line)
+        if header_match:
+            if current_key:
+                fields[current_key] = "\n".join(current_lines).strip()
+            current_key = header_match.group(1).strip()
+            current_lines = []
+        else:
+            if current_key:
+                current_lines.append(line)
+    if current_key:
+        fields[current_key] = "\n".join(current_lines).strip()
+    
+    cleaned = {}
+    for k, v in fields.items():
+        val = v.strip()
+        if val == "_No response_" or val == "_None_":
+            val = ""
+        cleaned[k] = val
+    return cleaned
+
+
+def slugify(text: str) -> str:
+    text = text.strip()
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", text)
+    return slug.strip("-").lower()
+
+
+def parse_links(raw_links: str, email: str, home_page: str, orcid: str) -> dict:
+    links = {}
+    if email:
+        links["email"] = email
+    if home_page:
+        links["home-page"] = home_page
+    if orcid:
+        links["orcid"] = orcid
+        
+    tokens = [t.strip() for t in re.split(r"[\n,]+", raw_links) if t.strip()]
+    for token in tokens:
+        if "github.com/" in token:
+            gh_match = re.search(r"github\.com/([A-Za-z0-9_.-]+)", token)
+            if gh_match:
+                links["github"] = gh_match.group(1)
+        elif "linkedin.com/in/" in token:
+            li_match = re.search(r"linkedin\.com/in/([A-Za-z0-9_.-]+)", token)
+            if li_match:
+                links["linkedin"] = li_match.group(1)
+        elif "twitter.com/" in token or "x.com/" in token:
+            tw_match = re.search(r"(?:twitter|x)\.com/([A-Za-z0-9_]+)", token)
+            if tw_match:
+                links["twitter"] = tw_match.group(1)
+        elif "scholar.google.com" in token:
+            links["google-scholar"] = token
+            
+    return links
+
+
+def download_image(raw_image: str, slug: str, repo_root: Path) -> str:
+    """Download image if it's a URL, return the relative path. Returns empty string if no image provided."""
+    if not raw_image:
+        return ""
+    
+    url_match = re.search(r"(https?://[^\s\)]+)", raw_image)
+    if not url_match:
+        if not raw_image.startswith("images/") and not raw_image.startswith("http"):
+            return f"images/{raw_image}"
+        return raw_image
+
+    url = url_match.group(1)
+    
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            content = response.read()
+            content_type = response.headers.get('Content-Type', '')
+            
+            ext = ".jpg"
+            if "image/png" in content_type:
+                ext = ".png"
+            elif "image/gif" in content_type:
+                ext = ".gif"
+            elif ".png" in url.lower(): 
+                ext = ".png"
+            elif ".gif" in url.lower(): 
+                ext = ".gif"
+                
+            image_path = repo_root / "images" / f"{slug}-photo{ext}"
+            image_path.parent.mkdir(parents=True, exist_ok=True)
+            image_path.write_bytes(content)
+            
+        return f"images/{slug}-photo{ext}"
+    except Exception as e:
+        print(f"Failed to download image from {url}: {e}")
+        return url
+
+
+def load_projects(repo_root: Path) -> list:
+    projects_file = repo_root / "_data" / "projects.yaml"
+    if projects_file.exists() and projects_file.stat().st_size > 0:
+        return yaml.safe_load(projects_file.read_text(encoding="utf-8")) or []
+    return []
+
+
+def save_projects(repo_root: Path, projects: list):
+    projects_file = repo_root / "_data" / "projects.yaml"
+    formatted_yaml = yaml.dump(projects, sort_keys=False, default_flow_style=False, allow_unicode=True)
+    # Restore spacing between list items for better readability
+    formatted_yaml = re.sub(r"\n- title:", r"\n\n- title:", formatted_yaml).strip() + "\n"
+    projects_file.write_text(formatted_yaml, encoding="utf-8")
+
+
+def parse_markdown_frontmatter(file_path: Path):
+    """Safely loads YAML frontmatter and content from a markdown file."""
+    content = file_path.read_text(encoding="utf-8")
+    if not content.startswith("---"):
+        raise ValueError(f"File {file_path} does not start with frontmatter")
+    parts = content.split("---", 2)
+    if len(parts) < 3:
+        raise ValueError(f"File {file_path} does not have valid frontmatter boundaries")
+    fm = yaml.safe_load(parts[1])
+    return fm, parts[2]
+
+
+def process_add_person(fields: dict, repo_root: Path) -> dict:
+    name = fields.get("Name", "")
+    if not name: raise ValueError("Name required")
+    slug = slugify(name)
+    
+    affiliation = fields.get("Affiliation", "")
+    role_category = fields.get("Role", "programmer")
+    description = fields.get("Description", "")
+    
+    raw_image = fields.get("Image", "")
+    image = download_image(raw_image, slug, repo_root)
+    
+    links = parse_links(
+        fields.get("Email or links", ""), 
+        fields.get("Email", ""),
+        fields.get("Home page", ""),
+        fields.get("ORCID", "")
+    )
+    
+    fm = {
+        "name": name,
+        "description": description,
+        "role": role_category,
+        "affiliation": affiliation,
+    }
+    if image: fm["image"] = image
+    if links: fm["links"] = links
+    
+    yaml_header = yaml.dump(fm, sort_keys=False, default_flow_style=False).strip()
+    content = f"---\n{yaml_header}\n---\n"
+    
+    summary = fields.get("Personal Summary", "").strip()
+    if summary:
+        content += f"\n{summary}\n"
+        
+    target_file = repo_root / "_members" / f"{slug}.md"
+    target_file.parent.mkdir(parents=True, exist_ok=True)
+    target_file.write_text(content, encoding="utf-8")
+    
+    return {
+        "action_type": "add-person",
+        "item_name": name,
+        "target_file": str(target_file.relative_to(repo_root)),
+        "branch_name": f"add-person-{slug}",
+        "pr_title": f"Add person: {name}"
+    }
+
+def process_remove_person(fields: dict, repo_root: Path) -> dict:
+    name = fields.get("Name", "")
+    if not name: raise ValueError("Name required")
+    
+    members_dir = repo_root / "_members"
+    target_file = None
+    
+    slug = slugify(name)
+    potential_file = members_dir / f"{slug}.md"
+    if potential_file.exists():
+        target_file = potential_file
+    else:
+        for f in members_dir.glob("*.md"):
+            try:
+                fm, _ = parse_markdown_frontmatter(f)
+                if fm and fm.get("name", "").lower() == name.lower():
+                    target_file = f
+                    break
+            except Exception:
+                pass
+                
+    if not target_file:
+        raise ValueError(f"Could not find member file for {name}")
+        
+    fm, rest = parse_markdown_frontmatter(target_file)
+    fm["role"] = "past-member"
+    
+    new_yaml = yaml.dump(fm, sort_keys=False, default_flow_style=False).strip()
+    new_content = f"---\n{new_yaml}\n---{rest}"
+    target_file.write_text(new_content, encoding="utf-8")
+    
+    return {
+        "action_type": "remove-person",
+        "item_name": name,
+        "target_file": str(target_file.relative_to(repo_root)),
+        "branch_name": f"remove-person-{slug}",
+        "pr_title": f"Remove person: {name}"
+    }
+
+
+def process_add_project(fields: dict, repo_root: Path) -> dict:
+    title = fields.get("Project Name", "")
+    if not title: raise ValueError("Project Name required")
+    
+    description = fields.get("Project Summary", "")
+    if not description: raise ValueError("Project Summary required")
+    
+    link = fields.get("Project Link", "")
+    
+    existing = load_projects(repo_root)
+        
+    new_project = {
+        "title": title,
+        "image": "images/photo.jpg",
+        "link": link,
+        "description": description
+    }
+    existing.append(new_project)
+    
+    save_projects(repo_root, existing)
+    
+    slug = slugify(title)
+    return {
+        "action_type": "add-project",
+        "item_name": title,
+        "target_file": "_data/projects.yaml",
+        "branch_name": f"add-project-{slug}",
+        "pr_title": f"Add project: {title}"
+    }
+
+
+def process_remove_project(fields: dict, repo_root: Path) -> dict:
+    title = fields.get("Project Name", "")
+    if not title: raise ValueError("Project Name required")
+    
+    existing = load_projects(repo_root)
+    if not existing:
+        raise ValueError("projects.yaml is empty or not found")
+        
+    found = False
+    for proj in existing:
+        if proj.get("title", "").lower() == title.lower():
+            proj["group"] = "previous"
+            found = True
+            break
+            
+    if not found:
+        raise ValueError(f"Could not find project {title}")
+        
+    save_projects(repo_root, existing)
+    
+    slug = slugify(title)
+    return {
+        "action_type": "remove-project",
+        "item_name": title,
+        "target_file": "_data/projects.yaml",
+        "branch_name": f"remove-project-{slug}",
+        "pr_title": f"Remove project: {title}"
+    }
+
+
+def main():
+    body = os.environ.get("ISSUE_BODY", "")
+    title = os.environ.get("ISSUE_TITLE", "")
+    number = os.environ.get("ISSUE_NUMBER", "0")
+    repo_root = Path(os.environ.get("REPO_ROOT", ".")).resolve()
+
+    if not body:
+        print("::error::No ISSUE_BODY provided.")
+        sys.exit(1)
+
+    fields = parse_issue_form(body)
+
+    try:
+        if re.search(r"add\s*person", title, re.IGNORECASE):
+            result = process_add_person(fields, repo_root)
+        elif re.search(r"remove\s*person", title, re.IGNORECASE):
+            result = process_remove_person(fields, repo_root)
+        elif re.search(r"add\s*project", title, re.IGNORECASE):
+            result = process_add_project(fields, repo_root)
+        elif re.search(r"remove\s*project", title, re.IGNORECASE):
+            result = process_remove_project(fields, repo_root)
+        else:
+            print(f"::error::Could not determine issue type from title: {title}")
+            sys.exit(1)
+    except Exception as e:
+        print(f"::error::Error processing issue: {str(e)}")
+        sys.exit(1)
+
+    if number and number != "0":
+        result["branch_name"] = f"{result['branch_name']}-{number}"
+
+    result["created"] = "true"
+    
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        with open(github_output, "a", encoding="utf-8") as f:
+            for k, v in result.items():
+                f.write(f"{k}={v}\n")
+
+    print(f"Success: {result['pr_title']}")
+
+
+if __name__ == "__main__":
+    main()
