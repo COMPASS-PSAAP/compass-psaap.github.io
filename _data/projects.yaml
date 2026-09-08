@@ -8,6 +8,7 @@
   tags:
   - resource
 
+
 - title: Cool Package
   subtitle: a subtitle
   group: featured
@@ -17,6 +18,7 @@
   repo: greenelab/lab-website-template
   tags:
   - resource
+
 
 - title: Cool Tutorial
   subtitle: a subtitle
@@ -28,6 +30,7 @@
   - resource
   - publication
 
+
 - title: Cool Web App
   subtitle: a subtitle
   image: images/projects/photo.jpg
@@ -37,6 +40,7 @@
   tags:
   - software
 
+
 - title: Cool Web Server
   subtitle: a subtitle
   image: images/projects/photo.jpg
@@ -45,3 +49,8 @@
   repo: greenelab/lab-website-template
   tags:
   - software
+
+- title: Foo Bar
+  image: images/projects/photo.jpg
+  link: https://github.com/mpi-advance/stream-triggering
+  description: An MPI Advance library that offers a stream-triggering API with multiple implementations.
