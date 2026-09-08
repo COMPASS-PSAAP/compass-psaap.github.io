@@ -1,15 +1,16 @@
 name: Remove person
-description: Request removal of a member profile
+description: Request removal of a member profile (moves to past members)
 title: "Remove person: "
 labels: ["content", "person"]
 body:
   - type: input
     id: name
     attributes:
-      label: Name of Member to be Removed
+      label: Name
+      description: The exact name of the person (please copy and paste this exactly as it appears in their heading on the website).
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: reason
     attributes:
       label: Reason for removal
@@ -19,12 +20,11 @@ body:
     id: notes
     attributes:
       label: Notes
+      description: Additional context for the review team.
   - type: checkboxes
     id: checklist
     attributes:
       label: Checklist
       options:
-        - label: I checked that this person is the correct one to remove.
-          required: true
-        - label: I reviewed whether any links or references should also be updated.
+        - label: I checked that this person is the correct one to remove and the name matches exactly.
           required: true

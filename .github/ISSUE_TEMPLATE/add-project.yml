@@ -4,45 +4,33 @@ title: "Add project: "
 labels: ["content", "project"]
 body:
   - type: input
-    id: title
+    id: project_name
     attributes:
-      label: Title
+      label: Project Name
     validations:
       required: true
   - type: input
-    id: subtitle
+    id: project_link
     attributes:
-      label: Subtitle
-  - type: input
-    id: link
-    attributes:
-      label: Link
-  - type: input
-    id: repo
-    attributes:
-      label: Repo
-  - type: input
-    id: tags
-    attributes:
-      label: Tags
-  - type: input
-    id: image
-    attributes:
-      label: Image
+      label: Project Link
+    validations:
+      required: true
   - type: textarea
-    id: description
+    id: project_summary
     attributes:
-      label: Short description
+      label: Project Summary
+      description: A description of the project.
     validations:
       required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Internal notes for the review team (will not be published to the website).
   - type: checkboxes
     id: checklist
     attributes:
       label: Checklist
       options:
-        - label: I checked that this project does not already exist on the site.
-          required: true
-        - label: I verified the title, link, repo, tags, and description are correct.
-          required: true
-        - label: I confirmed the content is appropriate for a public website.
+        - label: I affirm that I double-checked the information and that this project does not already exist on the site.
           required: true

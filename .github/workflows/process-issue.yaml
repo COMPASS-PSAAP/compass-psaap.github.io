@@ -1,0 +1,59 @@
+name: Process Content Issue
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  process_issue:
+    # Trigger only when 'create-pr' label is added
+    if: github.event.label.name == 'create-pr'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r .github/scripts/requirements.txt
+
+      - name: Process Issue
+        id: process
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REPO_ROOT: .
+        run: python .github/scripts/process_issue.py
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        if: steps.process.outputs.created == 'true'
+        with:
+          commit-message: "Automated: ${{ steps.process.outputs.pr_title }}"
+          title: "${{ steps.process.outputs.pr_title }}"
+          body: |
+            This PR was automatically generated from issue #${{ github.event.issue.number }}.
+            
+            Closes #${{ github.event.issue.number }}.
+          branch: "${{ steps.process.outputs.branch_name }}"
+          delete-branch: true
+          # Assign to the same team that reviews issues
+          team-reviewers: website-team
+
+      - name: Swap Labels
+        if: steps.process.outputs.created == 'true'
+        run: |
+          gh issue edit ${{ github.event.issue.number }} --remove-label "create-pr" --add-label "automated-pr"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

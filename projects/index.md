@@ -23,4 +23,10 @@ Projects and Publications- Coming Soon!
 
 ## More
 
-{% include list.html component="card" data="projects" filter="!group" style="small" %}
+{% include list.html component="card" data="projects" filter="group != 'featured' and group != 'previous'" style="small" %}
+
+{% include section.html %}
+
+## Previous Projects
+
+{% include list.html component="card" data="projects" filter="group == 'previous'" style="small" %}
