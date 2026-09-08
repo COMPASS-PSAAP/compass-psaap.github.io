@@ -34,7 +34,7 @@ For more information on the PSAAP IV COMPASS Center feel free to get in touch us
 
 {%
   include figure.html
-  image="images/Center-photo.png"
+  image="images/site/center-photo.png"
   caption="UNM's Center for Advanced Research Computing"
 %}
 

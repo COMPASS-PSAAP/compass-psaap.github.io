@@ -25,5 +25,6 @@ body:
     attributes:
       label: Checklist
       options:
-        - label: I checked that this project is the correct one to remove and the name matches exactly.
+        - label: I checked that this project is the correct one to remove and the project name matches exactly.
+          required: true
           required: true

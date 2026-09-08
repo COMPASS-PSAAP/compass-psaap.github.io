@@ -57,6 +57,13 @@ def parse_links(raw_links: str, email: str, home_page: str, orcid: str) -> dict:
                 links["github"] = gh_match.group(1)
         elif "linkedin.com/in/" in token:
             li_match = re.search(r"linkedin\.com/in/([A-Za-z0-9_.-]+)", token)
+    for token in email_links.split():
+        if "github.com/" in token:
+            gh_match = re.search(r"github\.com/([A-Za-z0-9_-]+)", token)
+            if gh_match:
+                links["github"] = gh_match.group(1)
+        elif "linkedin.com/in/" in token:
+            li_match = re.search(r"linkedin\.com/in/([A-Za-z0-9_.-]+)", token)
             if li_match:
                 links["linkedin"] = li_match.group(1)
         elif "twitter.com/" in token or "x.com/" in token:
@@ -69,15 +76,15 @@ def parse_links(raw_links: str, email: str, home_page: str, orcid: str) -> dict:
     return links
 
 
-def download_image(raw_image: str, slug: str, repo_root: Path) -> str:
+def download_image(raw_image: str, slug: str, repo_root: Path, folder: str) -> str:
     """Download image if it's a URL, return the relative path. Returns empty string if no image provided."""
     if not raw_image:
         return ""
     
     url_match = re.search(r"(https?://[^\s\)\"']+)", raw_image)
     if not url_match:
-        if not raw_image.startswith("images/") and not raw_image.startswith("http"):
-            return f"images/{raw_image}"
+        if not raw_image.startswith(f"{folder}/") and not raw_image.startswith("http"):
+            return f"{folder}/{raw_image}"
         return raw_image
 
     url = url_match.group(1)
@@ -98,11 +105,11 @@ def download_image(raw_image: str, slug: str, repo_root: Path) -> str:
             elif ".gif" in url.lower(): 
                 ext = ".gif"
                 
-            image_path = repo_root / "images" / f"{slug}-photo{ext}"
+            image_path = repo_root / folder / f"{slug}-photo{ext}"
             image_path.parent.mkdir(parents=True, exist_ok=True)
             image_path.write_bytes(content)
             
-        return f"images/{slug}-photo{ext}"
+        return f"{folder}/{slug}-photo{ext}"
     except Exception as e:
         print(f"Failed to download image from {url}: {e}")
         return url
@@ -110,14 +117,25 @@ def download_image(raw_image: str, slug: str, repo_root: Path) -> str:
 
 def load_projects(repo_root: Path) -> list:
     projects_file = repo_root / "_data" / "projects.yaml"
-    if projects_file.exists() and projects_file.stat().st_size > 0:
-        return yaml.safe_load(projects_file.read_text(encoding="utf-8")) or []
-    return []
+    if not projects_file.exists():
+        return []
+    yaml = YAML()
+    with open(projects_file, "r") as f:
+        projects = yaml.load(f)
+    return projects if projects else []
 
 
 def save_projects(repo_root: Path, projects: list):
     projects_file = repo_root / "_data" / "projects.yaml"
-    formatted_yaml = yaml.dump(projects, sort_keys=False, default_flow_style=False, allow_unicode=True)
+    yaml = YAML()
+    yaml.width = 4096
+    yaml.default_flow_style = False
+    
+    # Dump to string
+    buf = StringIO()
+    yaml.dump(projects, buf)
+    formatted_yaml = buf.getvalue()
+    
     # Restore spacing between list items for better readability
     formatted_yaml = re.sub(r"\n- title:", r"\n\n- title:", formatted_yaml).strip() + "\n"
     projects_file.write_text(formatted_yaml, encoding="utf-8")
@@ -131,8 +149,21 @@ def parse_markdown_frontmatter(file_path: Path):
     parts = content.split("---", 2)
     if len(parts) < 3:
         raise ValueError(f"File {file_path} does not have valid frontmatter boundaries")
-    fm = yaml.safe_load(parts[1])
+    
+    yaml = YAML()
+    fm = yaml.load(parts[1])
     return fm, parts[2]
+
+
+def dump_markdown_frontmatter(fm: dict, content: str, target_file: Path):
+    yaml = YAML()
+    yaml.width = 4096
+    yaml.default_flow_style = False
+    buf = StringIO()
+    yaml.dump(fm, buf)
+    new_yaml = buf.getvalue().strip()
+    new_content = f"---\n{new_yaml}\n---{content}"
+    target_file.write_text(new_content, encoding="utf-8")
 
 
 def process_add_person(fields: dict, repo_root: Path) -> dict:
@@ -145,7 +176,7 @@ def process_add_person(fields: dict, repo_root: Path) -> dict:
     description = fields.get("Description", "")
     
     raw_image = fields.get("Image", "")
-    image = download_image(raw_image, slug, repo_root)
+    image = download_image(raw_image, slug, repo_root, "images/team")
     
     links = parse_links(
         fields.get("Email or links", ""), 
@@ -163,16 +194,12 @@ def process_add_person(fields: dict, repo_root: Path) -> dict:
     if image: fm["image"] = image
     if links: fm["links"] = links
     
-    yaml_header = yaml.dump(fm, sort_keys=False, default_flow_style=False).strip()
-    content = f"---\n{yaml_header}\n---\n"
-    
     summary = fields.get("Personal Summary", "").strip()
-    if summary:
-        content += f"\n{summary}\n"
-        
+    content_body = f"\n{summary}\n" if summary else "\n"
+    
     target_file = repo_root / "_members" / f"{slug}.md"
     target_file.parent.mkdir(parents=True, exist_ok=True)
-    target_file.write_text(content, encoding="utf-8")
+    dump_markdown_frontmatter(fm, content_body, target_file)
     
     return {
         "action_type": "add-person",
@@ -209,9 +236,7 @@ def process_remove_person(fields: dict, repo_root: Path) -> dict:
     fm, rest = parse_markdown_frontmatter(target_file)
     fm["role"] = "past-member"
     
-    new_yaml = yaml.dump(fm, sort_keys=False, default_flow_style=False).strip()
-    new_content = f"---\n{new_yaml}\n---{rest}"
-    target_file.write_text(new_content, encoding="utf-8")
+    dump_markdown_frontmatter(fm, rest, target_file)
     
     return {
         "action_type": "remove-person",
@@ -230,12 +255,18 @@ def process_add_project(fields: dict, repo_root: Path) -> dict:
     if not description: raise ValueError("Project Summary required")
     
     link = fields.get("Project Link", "")
+    slug = slugify(title)
+    
+    raw_image = fields.get("Image", "")
+    image = download_image(raw_image, slug, repo_root, "images/projects")
+    if not image:
+        image = "images/projects/photo.jpg"
     
     existing = load_projects(repo_root)
         
     new_project = {
         "title": title,
-        "image": "images/photo.jpg",
+        "image": image,
         "link": link,
         "description": description
     }
@@ -243,7 +274,6 @@ def process_add_project(fields: dict, repo_root: Path) -> dict:
     
     save_projects(repo_root, existing)
     
-    slug = slugify(title)
     return {
         "action_type": "add-project",
         "item_name": title,

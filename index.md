@@ -29,7 +29,7 @@ Learn more about our research by reading our publications- New Publications Comi
 
 {%
   include feature.html
-  image="images/Research-photo.jpeg"
+  image="images/site/research-photo.jpg"
   link="research"
   title="Our Research"
   text=text
@@ -52,7 +52,7 @@ Learn more about how we're using our PSAAP IV Center to create more efficient an
 
 {%
   include feature.html
-  image="images/Additional-Logo.jpg"
+  image="images/site/additional-logo.png"
   link="projects"
   title="Our Projects"
   flip=true
@@ -77,7 +77,7 @@ We have a world class research team from University of New Mexico, Tennessee Tec
 
 {%
   include feature.html
-  image="images/team-photo.jpg"
+  image="images/site/team-photo.jpg"
   link="team"
   title="Our Team"
   text=text

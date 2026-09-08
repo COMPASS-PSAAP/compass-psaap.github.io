@@ -45,7 +45,7 @@ jobs:
           body: |
             This PR was automatically generated from issue #${{ github.event.issue.number }}.
             
-            @COMPASS-PSAAP/website-team Please review the changes!
+            @COMPASS-PSAAP/website-team Please review the changes and merge if they are ready to be published.
             
             Closes #${{ github.event.issue.number }}.
           branch: "${{ steps.process.outputs.branch_name }}"
