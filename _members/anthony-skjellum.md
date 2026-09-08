@@ -1,6 +1,6 @@
 ---
 name: Anthony Skjellum
-image: images/Anthony-photo.jpg
+image: images/team/anthony-skjellum-photo.jpg
 description: Co-PI
 affiliation: Tennessee Tech University
 role: principal-investigator

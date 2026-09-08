@@ -1,6 +1,6 @@
 ---
 name: Trilce Estrada
-image: images/Trilce-photo.jpeg
+image: images/team/trilce-estrada-photo.jpeg
 description: Co-PI
 affiliation: University of New Mexico
 role: principal-investigator

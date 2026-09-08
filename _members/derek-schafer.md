@@ -1,7 +1,7 @@
 ---
 name: Derek Schafer
-image: images/Derek-photo.jpg
-description: Staff Research Scientist 
+image: images/team/derek-schafer-photo.jpg
+description: Staff Research Scientist
 role: programmer
 affiliation: University of New Mexico
 links:

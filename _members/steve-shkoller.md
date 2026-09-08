@@ -1,8 +1,8 @@
 ---
 name: Steve Shkoller
-image: images/Steve-photo.jpeg
+image: images/team/steve-shkoller-photo.jpeg
 description: Co-PI
-affiliation: University of California at Davis 
+affiliation: University of California at Davis
 role: principal-investigator
 links:
   email: sshkoller@ucdavis.edu

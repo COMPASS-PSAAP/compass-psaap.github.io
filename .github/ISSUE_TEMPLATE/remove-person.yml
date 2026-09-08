@@ -13,7 +13,7 @@ body:
   - type: input
     id: reason
     attributes:
-      label: Reason for removal
+      label: Reason for archival
     validations:
       required: true
   - type: textarea

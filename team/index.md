@@ -8,7 +8,7 @@ nav:
 # {% include icon.html icon="fa-solid fa-users" %}Team
 
 We have a growing team consisting of six Principal Investigators, two Full Time Research Scientists, and five PhD Students. Take a look at their profiles to learn more about their objectives, work, publications, and research interests!
-{% include section.html background="images/background.jpg" dark=true %}
+{% include section.html background="images/site/background.jpg" dark=true %}
 
 <h2> <strong> Principal Investigators </strong> </h2> 
 
@@ -18,9 +18,9 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% include list.html data="members" component="portrait" filter="role == 'principal-investigator'" %}
 
-{% include section.html background="images/background.jpg" dark=true %}
+{% include section.html background="images/site/background.jpg" dark=true %}
 
-{% include section.html background="images/background.jpg" dark=true %}
+{% include section.html background="images/site/background.jpg" dark=true %}
 
 <h2> <strong> Staff Researchers </strong> </h2>
 {% include section.html %}
@@ -29,7 +29,7 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% include list.html data="members" component="portrait" filter="role == 'programmer'" %}
 
-{% include section.html background="images/background.jpg" dark=true %}
+{% include section.html background="images/site/background.jpg" dark=true %}
 
 <h2> <strong> Student Researchers </strong> </h2>
 {% include section.html %}
@@ -38,7 +38,7 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% include list.html data="members" component="portrait" filter="role == 'student'" %}
 
-{% include section.html background="images/background.jpg" dark=true %}
+{% include section.html background="images/site/background.jpg" dark=true %}
 
 <h2> <strong> Administrative Staff </strong> </h2>
 {% include section.html %}
@@ -47,7 +47,7 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% include list.html data="members" component="portrait" filter="role == 'admin'" %}
 
-{% include section.html background="images/background.jpg" dark=true %}
+{% include section.html background="images/site/background.jpg" dark=true %}
 
 <h2> <strong> Former Members & Alumni </strong> </h2>
 {% include section.html %}
@@ -56,7 +56,7 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% include list.html data="members" component="portrait" filter="role == 'past-member'" %}
 
-{% include section.html background="images/background.jpg" dark=true %}
+{% include section.html background="images/site/background.jpg" dark=true %}
 
 <h2> <strong> Our Sponsors </strong> </h2>
 
@@ -65,9 +65,9 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 
 {% capture content %}
 
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
+{% include figure.html image="images/projects/photo.jpg" %}
+{% include figure.html image="images/projects/photo.jpg" %}
+{% include figure.html image="images/projects/photo.jpg" %}
 
 {% endcapture %}
 

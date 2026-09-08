@@ -16,10 +16,15 @@ body:
     validations:
       required: true
   - type: textarea
+    id: image
+    attributes:
+      label: Image
+      description: "Drag and drop an image file here, or paste an image URL. (Supported formats: JPG, PNG)"
+  - type: textarea
     id: project_summary
     attributes:
       label: Project Summary
-      description: A description of the project.
+      description: Provide a brief overview of the project's goals and scope.
     validations:
       required: true
   - type: textarea

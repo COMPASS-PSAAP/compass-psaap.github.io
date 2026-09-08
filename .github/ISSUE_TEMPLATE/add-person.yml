@@ -7,14 +7,14 @@ body:
     id: name
     attributes:
       label: Name
-      description: The person's full name.
+      description: The person's name as they wish it to appear on the website (including preferred shorthand or middle initials).
     validations:
       required: true
   - type: textarea
     id: image
     attributes:
       label: Image
-      description: Drag and drop an image file here, or paste an image URL.
+      description: "Drag and drop an image file here, or paste an image URL. (Supported formats: JPG, PNG)"
   - type: dropdown
     id: role
     attributes:
@@ -30,7 +30,7 @@ body:
   - type: input
     id: description
     attributes:
-      label: Description
+      label: Detailed Role / Title
       description: A more detailed role or title (e.g., Staff Research Scientist, PhD Student, Co-PI).
     validations:
       required: true

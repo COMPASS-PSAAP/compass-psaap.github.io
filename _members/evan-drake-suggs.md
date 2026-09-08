@@ -1,7 +1,7 @@
 ---
 name: Evan Drake Suggs
-image: images/evan-photo.jpg
-description: Staff Research Scientist 
+image: images/team/evan-drake-suggs-photo.jpg
+description: Staff Research Scientist
 role: programmer
 affiliation: Tennessee Tech University
 links:
