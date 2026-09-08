@@ -45,11 +45,11 @@ jobs:
           body: |
             This PR was automatically generated from issue #${{ github.event.issue.number }}.
             
+            @COMPASS-PSAAP/website-team Please review the changes!
+            
             Closes #${{ github.event.issue.number }}.
           branch: "${{ steps.process.outputs.branch_name }}"
           delete-branch: true
-          # Assign to the same team that reviews issues
-          team-reviewers: website-team
 
       - name: Swap Labels
         if: steps.process.outputs.created == 'true'
