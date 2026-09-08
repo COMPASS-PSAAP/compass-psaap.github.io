@@ -3,45 +3,56 @@
   group: featured
   image: images/photo.jpg
   link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   repo: greenelab/lab-website-template
   tags:
-    - resource
+  - resource
 
 - title: Cool Package
   subtitle: a subtitle
   group: featured
   image: images/photo.jpg
   link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   repo: greenelab/lab-website-template
   tags:
-    - resource
+  - resource
 
 - title: Cool Tutorial
   subtitle: a subtitle
   image: images/photo.jpg
   link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   repo: greenelab/lab-website-template
   tags:
-    - resource
-    - publication
+  - resource
+  - publication
 
 - title: Cool Web App
   subtitle: a subtitle
   image: images/photo.jpg
   link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   repo: greenelab/lab-website-template
   tags:
-    - software
+  - software
 
 - title: Cool Web Server
   subtitle: a subtitle
   image: images/photo.jpg
   link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   repo: greenelab/lab-website-template
   tags:
-    - software
+  - software
+
+- title: Foo Bar
+  image: images/photo.jpg
+  link: https://github.com/mpi-advance/stream-triggering
+  description: An MPI Advance library that offers a stream-triggering API with multiple
+    implementations.
