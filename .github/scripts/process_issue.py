@@ -118,7 +118,6 @@ def save_projects(repo_root: Path, projects: list):
     yaml.dump(projects, buf)
     formatted_yaml = buf.getvalue()
     
-    formatted_yaml = re.sub(r"\n- title:", r"\n\n- title:", formatted_yaml).strip() + "\n"
     projects_file.write_text(formatted_yaml, encoding="utf-8")
 
 
@@ -293,6 +292,57 @@ def process_remove_project(fields: dict, repo_root: Path) -> dict:
     }
 
 
+def process_add_publication(fields: dict, repo_root: Path) -> dict:
+    pub_id = fields.get("DOI or URL", "")
+    if not pub_id: raise ValueError("DOI or URL required")
+    
+    # Ensure it starts with doi: or url: or some prefix
+    if not (pub_id.startswith("doi:") or pub_id.startswith("url:") or pub_id.startswith("pmid:")):
+        if pub_id.startswith("10."):
+            pub_id = f"doi:{pub_id}"
+        elif pub_id.startswith("http"):
+            pub_id = f"url:{pub_id}"
+            
+    slug = slugify(pub_id)
+    
+    new_pub = {"id": pub_id}
+    
+    if fields.get("Title"): new_pub["title"] = fields.get("Title")
+    if fields.get("Publisher"): new_pub["publisher"] = fields.get("Publisher")
+    if fields.get("Date"): new_pub["date"] = fields.get("Date")
+    if fields.get("Description"): new_pub["description"] = fields.get("Description")
+    
+    authors = fields.get("Authors", "")
+    if authors:
+        new_pub["authors"] = [a.strip() for a in authors.split(",") if a.strip()]
+        
+    sources_file = repo_root / "_data" / "sources.yaml"
+    yaml = YAML()
+    yaml.width = 4096
+    yaml.default_flow_style = False
+    
+    sources = []
+    if sources_file.exists():
+        with open(sources_file, "r") as f:
+            sources = yaml.load(f) or []
+            
+    sources.append(new_pub)
+    
+    buf = StringIO()
+    yaml.dump(sources, buf)
+    sources_file.write_text(buf.getvalue(), encoding="utf-8")
+    
+    # Use a short generic slug for branch name if ID is too long
+    safe_slug = slug[:30] if len(slug) > 30 else slug
+    return {
+        "action_type": "add-publication",
+        "item_name": pub_id,
+        "target_file": "_data/sources.yaml",
+        "branch_name": f"add-publication-{safe_slug}",
+        "pr_title": f"Add publication: {pub_id}"
+    }
+
+
 def main():
     body = os.environ.get("ISSUE_BODY", "")
     title = os.environ.get("ISSUE_TITLE", "")
@@ -314,6 +364,8 @@ def main():
             result = process_add_project(fields, repo_root)
         elif re.search(r"remove\s*project", title, re.IGNORECASE):
             result = process_remove_project(fields, repo_root)
+        elif re.search(r"add\s*publication", title, re.IGNORECASE):
+            result = process_add_publication(fields, repo_root)
         else:
             print(f"::error::Could not determine issue type from title: {title}")
             sys.exit(1)

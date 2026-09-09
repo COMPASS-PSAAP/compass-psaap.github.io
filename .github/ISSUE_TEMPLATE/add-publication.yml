@@ -1,0 +1,44 @@
+name: Add publication
+description: Request a new publication entry
+title: "Add publication: "
+labels: ["content", "publication"]
+body:
+  - type: input
+    id: publication_id
+    attributes:
+      label: DOI or URL
+      description: "The DOI (e.g., doi:10.1145/3731599.3767520) or URL (e.g., url:https://arxiv.org/abs/2104.08653) of the publication."
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: "Optional override for the title. If left blank, the citation system will attempt to fetch it automatically."
+  - type: input
+    id: authors
+    attributes:
+      label: Authors
+      description: "Optional override for the authors (comma separated). If left blank, they will be fetched automatically."
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher
+      description: "Optional override for the publisher or venue."
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: "Optional override for the publication date."
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Optional description or notes about the publication."
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I affirm that I double-checked the information and that this publication does not already exist on the site.
+          required: true

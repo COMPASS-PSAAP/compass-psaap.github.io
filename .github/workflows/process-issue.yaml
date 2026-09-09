@@ -36,6 +36,14 @@ jobs:
           REPO_ROOT: .
         run: python .github/scripts/process_issue.py
 
+      - name: Run citations update
+        if: steps.process.outputs.action_type == 'add-publication'
+        env:
+          GOOGLE_SCHOLAR_API_KEY: ${{ secrets.GOOGLE_SCHOLAR_API_KEY }}
+        run: |
+          python -m pip install --upgrade --requirement ./_cite/requirements.txt
+          python _cite/cite.py
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         if: steps.process.outputs.created == 'true'
