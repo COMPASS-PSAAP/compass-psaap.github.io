@@ -46,3 +46,22 @@
   description: SC'25 research poster by Michael Adams
   plugin: sources.py
   file: sources.yaml
+- id: url:https://doi.org/10.48550/arXiv.2602.15356
+  title: Co-Design and Evaluation of a CPU-Free MPI GPU Communication Abstraction
+    and Implementation
+  authors:
+  - Patrick G. Bridges
+  - Derek Schafer
+  - Jack Lange
+  - James B. White III
+  - Anthony Skjellum
+  - Evan Suggs
+  - Thomas Hines
+  - Purushotham Bangalore
+  - Matthew G. F. Dosanjh
+  - Whit Schonbein
+  publisher: arXiv
+  date: '2026-03-05'
+  link: http://arxiv.org/abs/2602.15356
+  plugin: sources.py
+  file: sources.yaml
