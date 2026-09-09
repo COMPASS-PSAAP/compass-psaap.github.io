@@ -3,7 +3,7 @@ name: Andrew Worley
 image: null
 description: Staff Research Scientist
 role: programmer
-affiliation: University of Arkansas
+affiliation: University of Alabama
 links:
   email: atworley@ua.edu
   orcid: 0000-0002-7385-9831
