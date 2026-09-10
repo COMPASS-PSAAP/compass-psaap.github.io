@@ -296,6 +296,9 @@ def process_add_publication(fields: dict, repo_root: Path) -> dict:
     pub_id = fields.get("DOI or URL", "")
     if not pub_id: raise ValueError("DOI or URL required")
     
+    title = fields.get("Title", "").strip()
+    if not title: raise ValueError("Title required")
+    
     # Ensure it starts with doi: or url: or some prefix
     if not (pub_id.startswith("doi:") or pub_id.startswith("url:") or pub_id.startswith("pmid:")):
         if pub_id.startswith("10."):
@@ -303,11 +306,11 @@ def process_add_publication(fields: dict, repo_root: Path) -> dict:
         elif pub_id.startswith("http"):
             pub_id = f"url:{pub_id}"
             
-    slug = slugify(pub_id)
+    slug = slugify(title)
+    safe_slug = slug[:40] if len(slug) > 40 else slug
     
-    new_pub = {"id": pub_id}
+    new_pub = {"id": pub_id, "title": title}
     
-    if fields.get("Title"): new_pub["title"] = fields.get("Title")
     if fields.get("Publisher"): new_pub["publisher"] = fields.get("Publisher")
     if fields.get("Date"): new_pub["date"] = fields.get("Date")
     if fields.get("Description"): new_pub["description"] = fields.get("Description")
@@ -332,14 +335,12 @@ def process_add_publication(fields: dict, repo_root: Path) -> dict:
     yaml.dump(sources, buf)
     sources_file.write_text(buf.getvalue(), encoding="utf-8")
     
-    # Use a short generic slug for branch name if ID is too long
-    safe_slug = slug[:30] if len(slug) > 30 else slug
     return {
         "action_type": "add-publication",
-        "item_name": pub_id,
+        "item_name": title,
         "target_file": "_data/sources.yaml",
         "branch_name": f"add-publication-{safe_slug}",
-        "pr_title": f"Add publication: {pub_id}"
+        "pr_title": f"Add publication: {title}"
     }
 
 
