@@ -14,7 +14,9 @@ body:
     id: title
     attributes:
       label: Title
-      description: "Optional override for the title. If left blank, the citation system will attempt to fetch it automatically."
+      description: "The title of the publication (required to simplify tracking and review)."
+    validations:
+      required: true
   - type: input
     id: authors
     attributes:
