@@ -1,5 +1,54 @@
 # map general type to default/fallback icon, text, etc.
 
+# research categories
+#
+# the center's areas of work. entries marked "category: true" are collected by
+# _includes/categories.html into the row of tag buttons shown on the Research,
+# Research Areas, and Projects pages. tag publications in _data/sources.yaml and
+# projects in _data/projects.yaml with these keys.
+
+performance-modeling:
+  category: true
+  name: Performance Modeling
+  icon: fa-solid fa-chart-line
+  description: Analytical and empirical models that predict how applications and system software behave at scale, and the measurement infrastructure that grounds them.
+
+cross-layer-optimization:
+  category: true
+  name: Cross-Layer Optimization
+  icon: fa-solid fa-layer-group
+  description: Optimizations that span application, runtime, and hardware boundaries, exposing information across layers that are traditionally opaque to one another.
+
+solver-design:
+  category: true
+  name: Solver Design
+  icon: fa-solid fa-square-root-variable
+  description: Numerical methods and parallel solvers built for the communication and memory characteristics of emerging architectures.
+
+system-software:
+  category: true
+  name: System Software
+  icon: fa-solid fa-gears
+  description: Runtimes, communication libraries, and operating system services that applications depend on for portable performance.
+
+integration:
+  category: true
+  name: Integration
+  icon: fa-solid fa-puzzle-piece
+  description: Bringing the center's components together into working end-to-end systems, and validating them against production workloads.
+
+project-infrastructure:
+  category: true
+  name: Project Infrastructure
+  icon: fa-solid fa-screwdriver-wrench
+  description: The testbeds, build and benchmarking pipelines, and software engineering practice that keep the center's work reproducible.
+
+education:
+  category: true
+  name: Education
+  icon: fa-solid fa-graduation-cap
+  description: Curriculum, training, and mentoring that prepare students for research and practice in high performance computing.
+
 # team member roles
 
 principal-investigator:
