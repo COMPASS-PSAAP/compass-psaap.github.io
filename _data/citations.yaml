@@ -17,6 +17,9 @@
     High Performance Computing, Networking, Storage and Analysis
   date: '2025-11-15'
   link: https://doi.org/hbn5wt
+  tags:
+  - performance-modeling
+  - system-software
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1145/3731599.3767393
@@ -32,6 +35,9 @@
     High Performance Computing, Networking, Storage and Analysis
   date: '2025-11-15'
   link: https://doi.org/hbn5wv
+  tags:
+  - system-software
+  - solver-design
   plugin: sources.py
   file: sources.yaml
 - id: url:https://sc25.supercomputing.org/proceedings/posters/poster_pages/post197.html
@@ -44,5 +50,8 @@
   link: https://sc25.supercomputing.org/proceedings/posters/poster_pages/post197.html
   type: paper
   description: SC'25 research poster by Michael Adams
+  tags:
+  - system-software
+  - solver-design
   plugin: sources.py
   file: sources.yaml

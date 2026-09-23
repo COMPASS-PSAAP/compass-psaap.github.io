@@ -1,7 +1,7 @@
 ---
 title: Projects
 nav:
-  order: 2
+  order: 3
   tooltip: Software, datasets, and more
 ---
 
@@ -9,7 +9,9 @@ nav:
 
 Projects and Publications- Coming Soon!
 
-{% include tags.html tags="publication, resource, website" %}
+{% include search-box.html %}
+
+{% include categories.html %}
 
 {% include search-info.html %}
 
