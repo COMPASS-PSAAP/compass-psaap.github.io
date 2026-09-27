@@ -1,0 +1,13 @@
+{% comment %}
+  row of tag buttons, one per research category defined in _data/types.yaml.
+  pass link= to point the buttons at the page whose items should be filtered.
+{% endcomment %}
+
+{% assign categories = "" | split: "," %}
+{% for type in site.data.types %}
+  {% if type[1].category %}
+    {% assign categories = categories | push: type[0] %}
+  {% endif %}
+{% endfor %}
+
+{% include tags.html tags=categories link=include.link %}

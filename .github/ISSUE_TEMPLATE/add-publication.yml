@@ -38,6 +38,19 @@ body:
       label: Description
       description: "Optional description or notes about the publication."
   - type: checkboxes
+    id: research_areas
+    attributes:
+      label: Research Areas
+      description: "Check every area this publication contributes to. These become tags on the Research page and place the publication on the Research Areas page."
+      options:
+        - label: Performance Modeling
+        - label: Cross-Layer Optimization
+        - label: Solver Design
+        - label: System Software
+        - label: Integration
+        - label: Project Infrastructure
+        - label: Education
+  - type: checkboxes
     id: checklist
     attributes:
       label: Checklist

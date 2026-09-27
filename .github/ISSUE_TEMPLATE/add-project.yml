@@ -33,6 +33,19 @@ body:
       label: Notes
       description: Internal notes for the review team (will not be published to the website).
   - type: checkboxes
+    id: research_areas
+    attributes:
+      label: Research Areas
+      description: "Check every area this project works in. These become tags on the Projects page and place the project on the Research Areas page."
+      options:
+        - label: Performance Modeling
+        - label: Cross-Layer Optimization
+        - label: Solver Design
+        - label: System Software
+        - label: Integration
+        - label: Project Infrastructure
+        - label: Education
+  - type: checkboxes
     id: checklist
     attributes:
       label: Checklist

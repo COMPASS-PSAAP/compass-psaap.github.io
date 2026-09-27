@@ -41,6 +41,24 @@ def slugify(text: str) -> str:
     return slug.strip("-").lower()
 
 
+def parse_research_areas(raw: str, repo_root: Path) -> list:
+    """turn checked "- [x] Label" lines into category tags from _data/types.yaml"""
+    types_file = repo_root / "_data" / "types.yaml"
+    if not types_file.exists():
+        return []
+
+    with open(types_file, "r") as f:
+        types = YAML().load(f) or {}
+    valid = {
+        key
+        for key, val in types.items()
+        if isinstance(val, dict) and val.get("category")
+    }
+
+    checked = re.findall(r"^\s*-\s*\[[xX]\]\s*(.+?)\s*$", raw, re.MULTILINE)
+    return [slug for slug in (slugify(label) for label in checked) if slug in valid]
+
+
 def parse_links(raw_links: str, email: str, home_page: str, orcid: str) -> dict:
     links = {}
     if email:
@@ -249,6 +267,10 @@ def process_add_project(fields: dict, repo_root: Path) -> dict:
         "link": link,
         "description": description
     }
+
+    tags = parse_research_areas(fields.get("Research Areas", ""), repo_root)
+    if tags: new_project["tags"] = tags
+
     existing.append(new_project)
     
     save_projects(repo_root, existing)
@@ -318,7 +340,10 @@ def process_add_publication(fields: dict, repo_root: Path) -> dict:
     authors = fields.get("Authors", "")
     if authors:
         new_pub["authors"] = [a.strip() for a in authors.split(",") if a.strip()]
-        
+
+    tags = parse_research_areas(fields.get("Research Areas", ""), repo_root)
+    if tags: new_pub["tags"] = tags
+
     sources_file = repo_root / "_data" / "sources.yaml"
     yaml = YAML()
     yaml.width = 4096

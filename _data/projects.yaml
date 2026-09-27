@@ -7,6 +7,7 @@
   repo: greenelab/lab-website-template
   tags:
   - resource
+  - project-infrastructure
 
 - title: Cool Package
   subtitle: a subtitle
@@ -17,6 +18,7 @@
   repo: greenelab/lab-website-template
   tags:
   - resource
+  - solver-design
 
 - title: Cool Tutorial
   subtitle: a subtitle
@@ -27,6 +29,7 @@
   tags:
   - resource
   - publication
+  - education
 
 - title: Cool Web App
   subtitle: a subtitle
@@ -36,6 +39,7 @@
   repo: greenelab/lab-website-template
   tags:
   - software
+  - integration
 
 - title: Cool Web Server
   subtitle: a subtitle
@@ -45,3 +49,4 @@
   repo: greenelab/lab-website-template
   tags:
   - software
+  - system-software
