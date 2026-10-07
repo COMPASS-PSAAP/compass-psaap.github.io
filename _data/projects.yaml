@@ -50,3 +50,9 @@
   tags:
   - software
   - system-software
+- title: Stream Triggering Design and Implementation
+  image: images/projects/photo.jpg
+  link: https://github.com/mpi-advance/stream-triggering
+  description: Design, implementation, and evaluation of a stream-triggered MPI interface, initially prototyped and tested on the LLNL Tuolumne and ORNL Frontier HPE Slingshot Systems.
+  tags:
+  - system-software
