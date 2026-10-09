@@ -55,3 +55,9 @@
   description: Design, implementation, and evaluation of a stream-triggered MPI interface, initially prototyped and tested on the LLNL Tuolumne and ORNL Frontier HPE Slingshot Systems.
   tags:
   - system-software
+- title: SparseAtlas
+  image: images/projects/sparseatlas-photo.png
+  link: https://github.com/COMPASS-PSAAP/SparseAtlas
+  description: SparseAtlas is developing a curated and computationally characterized collection of sparse matrices. Its goal is to help researchers understand how sparse-matrix structure influences computational behavior across hardware architectures, algorithms, and scientific workloads.
+  tags:
+  - performance-modeling
