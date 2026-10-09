@@ -37,6 +37,13 @@ body:
       value: |
         Once you finish this form, add the "create-pr" label to start the automation. If you have any questions or are unsure, you may tag the website team (@COMPASS-PSAAP/website-team) in a follow-up comment to have someone take a look.
   - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      description: "Check to request this project appear in the Featured section of the Projects page."
+      options:
+        - label: Feature this project
+  - type: checkboxes
     id: research_areas
     attributes:
       label: Research Areas
