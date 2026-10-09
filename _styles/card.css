@@ -23,6 +23,11 @@
   width: 100%;
 }
 
+.card-image img[data-fallback-logo] {
+  object-fit: contain;
+  padding: 10px;
+}
+
 .card-text {
   display: inline-flex;
   justify-content: flex-start;
