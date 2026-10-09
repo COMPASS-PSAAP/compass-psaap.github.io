@@ -256,19 +256,15 @@ def process_add_project(fields: dict, repo_root: Path) -> dict:
     
     raw_image = fields.get("Image", "")
     image = download_image(raw_image, slug, repo_root, "images/projects")
-    if not image:
-        image = "images/projects/photo.jpg"
     
     existing = load_projects(repo_root)
         
     new_project = {"title": title}
     if re.search(r"^\s*-\s*\[[xX]\]", fields.get("Featured", ""), re.MULTILINE):
         new_project["group"] = "featured"
-    new_project.update({
-        "image": image,
-        "link": link,
-        "description": description
-    })
+    if image: new_project["image"] = image
+    new_project["link"] = link
+    new_project["description"] = description
 
     tags = parse_research_areas(fields.get("Research Areas", ""), repo_root)
     if tags: new_project["tags"] = tags

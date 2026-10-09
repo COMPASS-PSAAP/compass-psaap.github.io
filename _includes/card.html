@@ -8,9 +8,10 @@
     class="card-image"
   >
     <img
-      src="{{ include.image | relative_url | uri_escape }}"
+      src="{{ include.image | default: "images/site/logo.png" | relative_url | uri_escape }}"
       alt="{{ include.title | default: "card image" | regex_strip }}"
       loading="lazy"
+      {% if include.image == blank %}data-fallback-logo{% endif %}
       {% include fallback.html %}
     >
   </a>
