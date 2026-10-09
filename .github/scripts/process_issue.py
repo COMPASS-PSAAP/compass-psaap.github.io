@@ -261,12 +261,14 @@ def process_add_project(fields: dict, repo_root: Path) -> dict:
     
     existing = load_projects(repo_root)
         
-    new_project = {
-        "title": title,
+    new_project = {"title": title}
+    if re.search(r"^\s*-\s*\[[xX]\]", fields.get("Featured", ""), re.MULTILINE):
+        new_project["group"] = "featured"
+    new_project.update({
         "image": image,
         "link": link,
         "description": description
-    }
+    })
 
     tags = parse_research_areas(fields.get("Research Areas", ""), repo_root)
     if tags: new_project["tags"] = tags
