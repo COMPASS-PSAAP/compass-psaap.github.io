@@ -170,7 +170,7 @@ def process_add_person(fields: dict, repo_root: Path) -> dict:
     
     affiliation = fields.get("Affiliation", "")
     role_category = fields.get("Role", "programmer")
-    description = fields.get("Description", "")
+    description = fields.get("Detailed Role / Title") or fields.get("Description", "")
     
     raw_image = fields.get("Image", "")
     image = download_image(raw_image, slug, repo_root, "images/team")
