@@ -61,3 +61,10 @@
   description: SparseAtlas is developing a curated and computationally characterized collection of sparse matrices. Its goal is to help researchers understand how sparse-matrix structure influences computational behavior across hardware architectures, algorithms, and scientific workloads.
   tags:
   - performance-modeling
+- title: Stream Triggering MPI Standardization
+  image: images/projects/stream-triggering-mpi-standardization-photo.png
+  link: https://compass.unm.edu/artifacts/mpi51-queued-operations-draft-20261009.pdf
+  description: Research to refine and fully specify the syntax and semantics of our stream triggering MPI operations and have them added to the MPI standard as a new "Queued Communications." The link points to a recent draft of the standard that includes this chapter.
+  tags:
+  - system-software
+  - integration
