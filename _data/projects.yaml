@@ -61,3 +61,10 @@
   description: SparseAtlas is developing a curated and computationally characterized collection of sparse matrices. Its goal is to help researchers understand how sparse-matrix structure influences computational behavior across hardware architectures, algorithms, and scientific workloads.
   tags:
   - performance-modeling
+- title: COMPASS Bootcamp
+  group: featured
+  link: https://compass.unm.edu/bootcamp/
+  description: A collection of both introductory and advanced training materials about the various applications and software stacks utilized by COMPASS researchers. Also includes a growing collection of hackathon topics.
+  tags:
+  - project-infrastructure
+  - education
