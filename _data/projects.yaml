@@ -68,3 +68,10 @@
   tags:
   - system-software
   - integration
+- title: COMPASS Bootcamp
+  group: featured
+  link: https://compass.unm.edu/bootcamp/
+  description: A collection of both introductory and advanced training materials about the various applications and software stacks utilized by COMPASS researchers. Also includes a growing collection of hackathon topics.
+  tags:
+  - project-infrastructure
+  - education
