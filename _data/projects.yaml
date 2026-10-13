@@ -1,66 +1,17 @@
-- title: Cool Dataset
-  subtitle: a subtitle
-  group: featured
-  image: images/projects/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-  - resource
-  - project-infrastructure
-
-- title: Cool Package
-  subtitle: a subtitle
-  group: featured
-  image: images/projects/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-  - resource
-  - solver-design
-
-- title: Cool Tutorial
-  subtitle: a subtitle
-  image: images/projects/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-  - resource
-  - publication
-  - education
-
-- title: Cool Web App
-  subtitle: a subtitle
-  image: images/projects/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-  - software
-  - integration
-
-- title: Cool Web Server
-  subtitle: a subtitle
-  image: images/projects/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-  - software
-  - system-software
 - title: Stream Triggering Design and Implementation
+  group: featured
   link: https://github.com/mpi-advance/stream-triggering
   description: Design, implementation, and evaluation of a stream-triggered MPI interface, initially prototyped and tested on the LLNL Tuolumne and ORNL Frontier HPE Slingshot Systems.
   tags:
   - system-software
+
 - title: SparseAtlas
   image: images/projects/sparseatlas-photo.png
   link: https://github.com/COMPASS-PSAAP/SparseAtlas
   description: SparseAtlas is developing a curated and computationally characterized collection of sparse matrices. Its goal is to help researchers understand how sparse-matrix structure influences computational behavior across hardware architectures, algorithms, and scientific workloads.
   tags:
   - performance-modeling
+
 - title: Stream Triggering MPI Standardization
   image: images/projects/stream-triggering-mpi-standardization-photo.png
   link: https://compass.unm.edu/artifacts/mpi51-queued-operations-draft-20261009.pdf
@@ -68,6 +19,7 @@
   tags:
   - system-software
   - integration
+
 - title: COMPASS Bootcamp
   group: featured
   link: https://compass.unm.edu/bootcamp/
