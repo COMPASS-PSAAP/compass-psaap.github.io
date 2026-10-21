@@ -21,29 +21,29 @@
 - id: doi:10.1109/HiPC66333.2025.00013
   tags:
     - performance-modeling
-- id: doi: 10.1109/IPDPSW71298.2026.00023
+- id: doi:10.1109/IPDPSW71298.2026.00023
   tags:
     - system-software
     - solver-design
-- id: doi: 10.1109/IPDPSW71298.2026.00042
+- id: doi:10.1109/IPDPSW71298.2026.00042
   tags:
     - system-software
     - solver-design
-- id: doi: 10.1109/MCSE.2026.3713088
+- id: doi:10.1109/MCSE.2026.3713088
   tags:
     - project-infrastructure
-- id: doi: 10.1007/978-3-032-07194-1_10
+- id: doi:10.1007/978-3-032-07194-1_10
   tags:
     - system-software
-- id: doi: 10.1145/3815572.3815748
+- id: doi:10.1145/3815572.3815748
   tags:
     - system-software
 - id: https://clustercomp.org/2026/program/
   title: Co-Design and Evaluation of a CPU-Free MPI GPU Communication Abstraction and Implementation
   authors:
     - Patrick G. Bridges
-    - Derek Schafer 
-    - Jack Lange 
+    - Derek Schafer
+    - Jack Lange
     - James B. White
     - Anthony Skjellum
     - Evan Suggs
