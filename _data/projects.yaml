@@ -27,3 +27,8 @@
   tags:
   - project-infrastructure
   - education
+- title: Stream Triggered Kokkos Comm
+  link: https://github.com/EvanDrakeSuggs/kokkos-comm/tree/stream-triggering
+  description: Implementation of stream triggering as a backend in Kokkos Comm. Tested on Tuolumne.
+  tags:
+  - system-software
