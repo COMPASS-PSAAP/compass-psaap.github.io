@@ -55,3 +55,126 @@
   - solver-design
   plugin: sources.py
   file: sources.yaml
+- id: doi:10.1109/HiPC66333.2025.00013
+  title: Grey-Box Machine Learning Prediction of Parallel Application Scaling
+  authors:
+  - Akhil Alasandagutti
+  - Patrick G. Bridges
+  - Trilce Estrada
+  publisher: 2025 IEEE 32nd International Conference on High Performance Computing,
+    Data, and Analytics (HiPC)
+  date: '2025-12-17'
+  link: https://doi.org/hcpgnx
+  tags:
+  - performance-modeling
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/IPDPSW71298.2026.00023
+  title: Optimizing Allreduce Operations for Modern Heterogeneous Architectures with
+    Multiple Processes per GPU
+  authors:
+  - Michael Adams
+  - Amanda Bienz
+  publisher: 2026 IEEE International Parallel and Distributed Processing Symposium
+    Workshops (IPDPSW)
+  date: '2026-05-01'
+  link: https://doi.org/hcpgnz
+  tags:
+  - system-software
+  - solver-design
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/IPDPSW71298.2026.00042
+  title: Assessing the impact of MPI process placement on communication in many-core
+    systems
+  authors:
+  - Jackson Wesley
+  - Whit Schonbein
+  - David DeBonis
+  - Matthew G. F. Dosanjh
+  - Amanda Bienz
+  publisher: 2026 IEEE International Parallel and Distributed Processing Symposium
+    Workshops (IPDPSW)
+  date: '2026-05-01'
+  link: https://doi.org/hcpgn2
+  tags:
+  - system-software
+  - solver-design
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/MCSE.2026.3713088
+  title: The Case of the Mysterious Citations
+  authors:
+  - Amanda Bienz
+  - Carl Pearson
+  - Simon Garcia de Gonzalo
+  publisher: Computing in Science &amp; Engineering
+  date: '2026-01-01'
+  link: https://doi.org/hcpgn3
+  tags:
+  - project-infrastructure
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1007/978-3-032-07194-1_10
+  title: "Concepts for\_Designing Modern C++ Interfaces for\_MPI"
+  authors:
+  - C. Nicole Avans
+  - Alfredo A. Correa
+  - Sayan Ghosh
+  - Matthias Schimek
+  - Joseph Schuchart
+  - Anthony Skjellum
+  - Evan D. Suggs
+  - Tim Niklas Uhl
+  publisher: Lecture Notes in Computer Science
+  date: '2025-10-15'
+  link: https://doi.org/hcpgn4
+  tags:
+  - system-software
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1145/3815572.3815748
+  title: 'Kokkos Comm: Performance Portable Communication for Distributed Kokkos Applications'
+  authors:
+  - C. Nicole Avans
+  - Gabriel Dos Santos
+  - "C\xE9dric Chevalier"
+  - Hugo Taboada
+  - "Marc P\xE9rache"
+  - Matthew G. F. Dosanjh
+  - Stephen L. Olivier
+  - Carl Pearson
+  - Evan D. Suggs
+  - Vivek Kale
+  - Anthony Skjellum
+  publisher: Proceedings of the Platform for Advanced Scientific Computing Conference
+  date: '2026-06-28'
+  link: https://doi.org/hcpgn5
+  tags:
+  - system-software
+  plugin: sources.py
+  file: sources.yaml
+- id: https://clustercomp.org/2026/program/
+  title: Co-Design and Evaluation of a CPU-Free MPI GPU Communication Abstraction
+    and Implementation
+  authors:
+  - Patrick G. Bridges
+  - Derek Schafer
+  - Jack Lange
+  - James B. White
+  - Anthony Skjellum
+  - Evan Suggs
+  - Thomas Hines
+  - Purushotham Bangalore
+  - Matthew G. F. Dosanjh
+  - Whit Schonbein
+  publisher: IEEE Cluster 2026
+  date: ''
+  link: https://clustercomp.org/2026/
+  type: paper
+  description: IEEE Cluster 2026 Paper on Stream-Triggered Communication
+  tags:
+  - system-software
+  - solver-design
+  plugin: sources.py
+  file: sources.yaml
