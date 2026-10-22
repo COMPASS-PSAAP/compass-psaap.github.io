@@ -12,7 +12,7 @@
     - Michael Adams
     - Amanda Bienz
   publisher: Supercomputing 2025
-  date: November, 2025
+  date: '2025-11-15'
   type: paper
   description: SC'25 research poster by Michael Adams
   tags:
@@ -52,7 +52,7 @@
     - Matthew G. F. Dosanjh
     - Whit Schonbein
   publisher: IEEE Cluster 2026
-  date: September, 2026
+  date: '2026-25-09'
   type: paper
   description: IEEE Cluster 2026 Paper on Stream-Triggered Communication
   tags:
