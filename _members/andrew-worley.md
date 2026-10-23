@@ -1,8 +1,8 @@
 ---
 name: Andrew Worley
-image: null
+image:
 description: Staff Research Scientist
-role: programmer
+role: past-member
 affiliation: University of Alabama
 links:
   email: atworley@ua.edu
