@@ -58,3 +58,15 @@
   tags:
     - system-software
     - solver-design
+- id: https://clustercomp.org/2026/program/
+  title: Cross-Layer Characterization Framework for HPC System Utilization
+  authors:
+    - Hari Teja Jajula
+    - Purushotham Bangalore
+  publisher: IEEE Cluster 2026
+  date: 2026-09-24
+  type: paper
+  description: IEEE Cluster 2026 Paper Best Paper Award Finalist
+  tags:
+    - cross-layer-optimization
+    - system-software
