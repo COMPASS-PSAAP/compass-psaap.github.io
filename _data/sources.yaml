@@ -38,35 +38,11 @@
 - id: doi:10.1145/3815572.3815748
   tags:
     - system-software
-- id: https://clustercomp.org/2026/program/
-  title: Co-Design and Evaluation of a CPU-Free MPI GPU Communication Abstraction and Implementation
-  authors:
-    - Patrick G. Bridges
-    - Derek Schafer
-    - Jack Lange
-    - James B. White
-    - Anthony Skjellum
-    - Evan Suggs
-    - Thomas Hines
-    - Purushotham Bangalore
-    - Matthew G. F. Dosanjh
-    - Whit Schonbein
-  publisher: IEEE Cluster 2026
-  date: 2026-09-25
-  type: paper
-  description: IEEE Cluster 2026 Paper on Stream-Triggered Communication
+- id: doi:10.1109/CLUSTER68337.2026.00035
   tags:
     - system-software
     - solver-design
-- id: https://clustercomp.org/2026/program/
-  title: Cross-Layer Characterization Framework for HPC System Utilization
-  authors:
-    - Hari Teja Jajula
-    - Purushotham Bangalore
-  publisher: IEEE Cluster 2026
-  date: 2026-09-24
-  type: paper
-  description: IEEE Cluster 2026 Paper Best Paper Award Finalist
+- id: doi:10.1109/CLUSTER68337.2026.00013
   tags:
     - cross-layer-optimization
     - system-software

@@ -154,16 +154,36 @@
   - system-software
   plugin: sources.py
   file: sources.yaml
-- id: https://clustercomp.org/2026/program/
-  title: Cross-Layer Characterization Framework for HPC System Utilization
+- id: doi:10.1109/CLUSTER68337.2026.00035
+  title: Co-Design and Evaluation of a CPU-Free MPI GPU Communication Abstraction
+    and Implementation
+  authors:
+  - Patrick G. Bridges
+  - Derek Schafer
+  - Jack Lange
+  - James B. White
+  - Anthony Skjellum
+  - Evan Suggs
+  - Thomas Hines
+  - Purushotham Bangalore
+  - Matthew G. F. Dosanjh
+  - Whit Schonbein
+  publisher: 2026 IEEE International Conference on Cluster Computing (CLUSTER)
+  date: '2026-09-01'
+  link: https://doi.org/hcppbp
+  tags:
+  - system-software
+  - solver-design
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/CLUSTER68337.2026.00013
+  title: Cross-Layer Characterization Framework for Hpc System Utilization
   authors:
   - Hari Teja Jajula
-  - Purushotham Bangalore
-  publisher: IEEE Cluster 2026
-  date: '2026-09-24'
-  link: https://clustercomp.org/2026/
-  type: paper
-  description: IEEE Cluster 2026 Paper Best Paper Award Finalist
+  - Purushotham V. Bangalore
+  publisher: 2026 IEEE International Conference on Cluster Computing (CLUSTER)
+  date: '2026-09-01'
+  link: https://doi.org/hcppbq
   tags:
   - cross-layer-optimization
   - system-software
