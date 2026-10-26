@@ -1,11 +1,11 @@
 ---
 name: Abdalaziz Raad
-image: null
+image:
 description: Student Research Scientist
-role: student
+role: past-member
 affiliation: University of New Mexico
 links:
-  email: null
-  orcid: null
+  email:
+  orcid:
 ---
 
