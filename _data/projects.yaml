@@ -32,3 +32,10 @@
   description: Implementation of stream triggering as a backend in Kokkos Comm. Tested on Tuolumne.
   tags:
   - system-software
+- title: Beatnik
+  image: images/projects/beatnik-photo.png
+  link: https://github.com/CUP-ECS/beatnik/tree/main
+  description: Beatnik is being redesigned to model the rising bubble problem. The new Beatnik uses unstructured, adaptive meshing and a fast multipole solver for far field interactions. The library uses [Cabana](https://github.com/CUP-ECS/Cabana) for GPU-optimized array of structures of arrays (AoSoA) data structures and [Kokkos](https://github.com/kokkos/kokkos) to run on GPUs.
+  tags:
+  - performance-modeling
+  - solver-design
