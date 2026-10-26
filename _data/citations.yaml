@@ -189,3 +189,17 @@
   - system-software
   plugin: sources.py
   file: sources.yaml
+- id: doi:10.1109/SCW63240.2024.00066
+  title: 'Beatnik: A Novel Global Communication Mini-Application'
+  authors:
+  - Jason R. Stewart
+  - Patrick G. Bridges
+  publisher: 'SC24-W: Workshops of the International Conference for High Performance
+    Computing, Networking, Storage and Analysis'
+  date: '2024-11-17'
+  link: https://doi.org/hcpzx4
+  tags:
+  - performance-modeling
+  - solver-design
+  plugin: sources.py
+  file: sources.yaml

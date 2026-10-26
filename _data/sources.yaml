@@ -1,48 +1,56 @@
 - id: doi:10.1145/3731599.3767520
   tags:
-    - performance-modeling
-    - system-software
+  - performance-modeling
+  - system-software
 - id: doi:10.1145/3731599.3767393
   tags:
-    - system-software
-    - solver-design
+  - system-software
+  - solver-design
 - id: url:https://sc25.supercomputing.org/proceedings/posters/poster_pages/post197.html
   title: Optimizing the GPU All-Reduce Using Multiple Processes per GPU
   authors:
-    - Michael Adams
-    - Amanda Bienz
+  - Michael Adams
+  - Amanda Bienz
   publisher: Supercomputing 2025
   date: 2025-11-15
   type: paper
   description: SC'25 research poster by Michael Adams
   tags:
-    - system-software
-    - solver-design
+  - system-software
+  - solver-design
 - id: doi:10.1109/HiPC66333.2025.00013
   tags:
-    - performance-modeling
+  - performance-modeling
 - id: doi:10.1109/IPDPSW71298.2026.00023
   tags:
-    - system-software
-    - solver-design
+  - system-software
+  - solver-design
 - id: doi:10.1109/IPDPSW71298.2026.00042
   tags:
-    - system-software
-    - solver-design
+  - system-software
+  - solver-design
 - id: doi:10.1109/MCSE.2026.3713088
   tags:
-    - project-infrastructure
+  - project-infrastructure
 - id: doi:10.1007/978-3-032-07194-1_10
   tags:
-    - system-software
+  - system-software
 - id: doi:10.1145/3815572.3815748
   tags:
-    - system-software
+  - system-software
 - id: doi:10.1109/CLUSTER68337.2026.00035
   tags:
-    - system-software
-    - solver-design
+  - system-software
+  - solver-design
 - id: doi:10.1109/CLUSTER68337.2026.00013
   tags:
-    - cross-layer-optimization
-    - system-software
+  - cross-layer-optimization
+  - system-software
+- id: doi:10.1109/SCW63240.2024.00066
+  title: 'Beatnik: A Novel Global Communication Mini-Application'
+  authors:
+  - Jason R. Stewart
+  - Patrick G. Bridges
+  tags:
+  - performance-modeling
+  - solver-design
