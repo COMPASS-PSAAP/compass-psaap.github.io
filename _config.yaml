@@ -8,12 +8,7 @@ proofer: false
 
 # site social media and other links
 links:
-  email: contact@COMPASS-PSAAP.com
-  orcid: 0000-0001-8713-9213
-  google-scholar: ETJoidYAAAAJ
   github: COMPASS-PSAAP
-  twitter: COMPASS-PSAAP
-  youtube: COMPASS-PSAAP
 
 ### jekyll settings
 

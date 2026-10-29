@@ -14,7 +14,7 @@ software that can adapt to and optimize for changing problem, application, and s
 
 {% capture text %}
 
-Learn more about our research by reading our publications- New Publications Coming Soon!
+COMPASS researchers publish regularly in high-performance computing venues. Our publications cover the full range of the center's work, from new communication interfaces to performance modeling and the system software that ties them together. Take a look to see what we've been working on!
 
 {%
   include button.html
@@ -62,7 +62,7 @@ Learn more about how we're using our PSAAP IV Center to create more efficient an
 
 {% capture text %}
 
-We have a world class research team from University of New Mexico, Tennessee Technical University, University of Alabama, and University of California- Davis. Come meet them and see the unique talents we have to offer!
+We have a world class research team from University of New Mexico, Tennessee Tech University, University of Alabama, and University of California, Davis. Come meet them and see the unique talents we have to offer!
 
 {%
   include button.html
