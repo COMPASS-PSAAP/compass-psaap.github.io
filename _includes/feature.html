@@ -3,6 +3,9 @@
   {% if include.flip %}
     data-flip
   {% endif %}
+  {% if include.style %}
+    data-style="{{ include.style }}"
+  {% endif %}
 >
   <a
     {% if include.link %}

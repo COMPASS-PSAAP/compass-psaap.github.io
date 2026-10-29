@@ -7,7 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-users" %}Team
 
-We have a growing team consisting of six Principal Investigators, two Full Time Research Scientists, and five PhD Students. Take a look at their profiles to learn more about their objectives, work, publications, and research interests!
+Our team brings together faculty, research scientists, students, and staff from the University of New Mexico, Tennessee Tech University, the University of Alabama, and the University of California, Davis. Take a look at their profiles to learn more about their objectives, work, publications, and research interests!
 {% include section.html background="images/site/background.jpg" dark=true %}
 
 <h2> <strong> Principal Investigators </strong> </h2> 
@@ -55,20 +55,3 @@ We have a growing team consisting of six Principal Investigators, two Full Time 
 {% include section.html %}
 
 {% include list.html data="members" component="portrait" filter="role == 'past-member'" %}
-
-{% include section.html background="images/site/background.jpg" dark=true %}
-
-<h2> <strong> Our Sponsors </strong> </h2>
-
-
-{% include section.html %}
-
-{% capture content %}
-
-{% include figure.html image="images/projects/photo.jpg" %}
-{% include figure.html image="images/projects/photo.jpg" %}
-{% include figure.html image="images/projects/photo.jpg" %}
-
-{% endcapture %}
-
-{% include grid.html style="square" content=content %}

@@ -1,6 +1,6 @@
 ---
 name: Anneliese Ward
-image: images/anneliese-photo.png
+image: images/team/anneliese-ward.png
 description: Grant Manager and Administrator
 role: admin
 affiliation: University of New Mexico
