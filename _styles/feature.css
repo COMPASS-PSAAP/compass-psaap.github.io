@@ -32,6 +32,15 @@
   font-weight: var(--semi-bold);
 }
 
+.feature[data-style=bare] .feature-image {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.feature[data-style=bare] .feature-image img {
+  object-fit: contain;
+}
+
 .feature[data-flip] {
   flex-direction: row-reverse;
 }
