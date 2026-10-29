@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/preview/pr-75/feed.xml" rel="self" type="application/atom+xml" /><link href="/preview/pr-75/" rel="alternate" type="text/html" /><updated>2026-10-29T03:54:03+00:00</updated><id>/preview/pr-75/feed.xml</id><title type="html">COMPASS-PSAAP</title><subtitle>The Center for Modern Parallel Adaptive Systems Software (COMPASS), is a DOE-funded PSAAP research center focused on developing new systems software for cutting edge HPC systems.</subtitle><entry><title type="html">COMPASS 2026 Annual Review</title><link href="/preview/pr-75/2026/10/28/compass-annual-review-2026.html" rel="alternate" type="text/html" title="COMPASS 2026 Annual Review" /><published>2026-10-28T00:00:00+00:00</published><updated>2026-10-29T03:51:53+00:00</updated><id>/preview/pr-75/2026/10/28/compass-annual-review-2026</id><content type="html" xml:base="/preview/pr-75/2026/10/28/compass-annual-review-2026.html"><![CDATA[<p>Materials from the COMPASS 2026 annual review.</p>
+
+<h2 id="agenda">Agenda</h2>
+
+<p><a href="/preview/pr-75/artifacts/annual-review-2026/agenda.pdf">Download the agenda (PDF)</a></p>
+
+<h2 id="presentations">Presentations</h2>
+
+<ul>
+  <li><a href="/preview/pr-75/artifacts/annual-review-2026/slides/presentation-1.pdf">Center Overview, Roadmap, and Y1 Milestones</a> (Patrick Bridges)</li>
+  <li><a href="/preview/pr-75/artifacts/annual-review-2026/slides/presentation-2.pdf">Project Foundations: Training Materials, Initial Sensitivity Studies, and System Monitoring</a> (Derek Schafer and Puri Bangalore)</li>
+  <li><a href="/preview/pr-75/artifacts/annual-review-2026/slides/presentation-3.pdf">System Optimization: Workflow, Experiment/Data Collection and Performance Tuning</a> (Trilce Estrada and Patrick Bridges)</li>
+  <li><a href="/preview/pr-75/artifacts/annual-review-2026/slides/presentation-4.pdf">System Software Primitives: Communication Optimization</a> (Tony Skjellum)</li>
+  <li><a href="/preview/pr-75/artifacts/annual-review-2026/slides/presentation-5.pdf">Integrated Project: Sparse Solver Performance Optimization</a> (Amanda Bienz)</li>
+  <li><a href="/preview/pr-75/artifacts/annual-review-2026/slides/presentation-6.pdf">Integrated Project: Hydrodynamic Solver Methods</a> (Steve Shkoller and Jason Stewart)</li>
+  <li><a href="/preview/pr-75/artifacts/annual-review-2026/slides/presentation-7.pdf">Plans for the upcoming year and beyond</a> (Patrick Bridges)</li>
+</ul>
+
+<h2 id="student-posters">Student Posters</h2>
+
+<p><a href="/preview/pr-75/artifacts/annual-review-2026/posters.pdf">All student posters (PDF)</a></p>]]></content><author><name>derek-schafer</name></author><category term="Annual Review" /><summary type="html"><![CDATA[Materials from the COMPASS 2026 annual review.]]></summary></entry></feed>
