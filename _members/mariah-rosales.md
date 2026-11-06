@@ -1,6 +1,6 @@
 ---
 name: Mariah Rosales
-image: images/mariah-rosales.png
+image: images/team/mariah-rosales.png
 description: Administrative Coordinator
 role: admin
 affiliation: University of New Mexico
