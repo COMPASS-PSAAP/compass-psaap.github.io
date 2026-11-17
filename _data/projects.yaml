@@ -14,7 +14,7 @@
 
 - title: Stream Triggering MPI Standardization
   image: images/projects/stream-triggering-mpi-standardization-photo.png
-  link: https://compass.unm.edu/artifacts/mpi51-queued-operations-draft-20261009.pdf
+  link: https://compass.unm.edu/artifacts/mpi51-queued-operations-draft-20261111.pdf
   description: Research to refine and fully specify the syntax and semantics of our stream triggering MPI operations and have them added to the MPI standard as a new "Queued Communications." The link points to a recent draft of the standard that includes this chapter.
   tags:
   - system-software
